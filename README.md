@@ -23,30 +23,29 @@ c)
 a) I.
        Tags estruturais
        <!– –> Cria um comentário - 
-       <!DOCTYPE html>  A tag !DOCTYPE informa ao navegador a versão do HTML
-       <html> </html>  Envolve todo um documento html
-       <head> </head>  Envolve o cabeçalho de um documento html
-       <meta >  Fornece informações gerais sobre o documento
-       <style> </style>  Informações de estilo
-       <script> </script>  Linguagem script
-       <noscript> </noscript>  Conteúdo alternativo para quando a linguagem script não for suportada
-       <title> </title>  O título do documento
-       <body> </body>  Envolve o corpo (texto e tags) do documento html
-       <header></header>  Define um cabeçalho para página, podendo ser utilizado dentro de outras sessões. 
-       <main></main>  Representa o conteúdo principal do seu corpo, ou seja, o conteúdo relacionado diretamente com o tópico central da página ou com a funcionalidade central da aplicação;
-       <footer></footer>  Rodapé para a página
-       <section></section>  Definem uma sessão para a página
-       <article></article>  Separa o conteúdo da sua página
-       <aside></aside>  Representa uma seção de uma página cujo conteúdo é tangencialmente relacionado ao conteúdo do seu entorno, que poderia ser considerado separado do conteúdo;
-       <nav></nav> Conteúdo de navegação. Muito utilizado em conjunto com listas e na criação de menus;
-       <div></div>  Divisão da página. Desta forma, funciona como um container para conteúdo de fluxo. Uma vez que não possui um valor semântico, é muito utilizado para organizar melhor o conteúdo. 
+       !DOCTYPE html  A tag !DOCTYPE informa ao navegador a versão do HTML
+       html > Envolve todo um documento html
+       head > Envolve o cabeçalho de um documento html
+       meta >  Fornece informações gerais sobre o documento
+       style > Informações de estilo
+       script > Linguagem script
+       title > O título do documento
+       body > Envolve o corpo (texto e tags) do documento html
+       header > Define um cabeçalho para página, podendo ser utilizado dentro de outras sessões. 
+       main > Representa o conteúdo principal do seu corpo, ou seja, o conteúdo relacionado diretamente com o tópico central da página ou com a funcionalidade central da aplicação;
+       footer > Rodapé para a página
+       section > Definem uma sessão para a página
+       article > Separa o conteúdo da sua página
+       aside > Representa uma seção de uma página cujo conteúdo é tangencialmente relacionado ao conteúdo do seu entorno, que poderia ser considerado separado do conteúdo;
+       nav > Conteúdo de navegação. Muito utilizado em conjunto com listas e na criação de menus;
+       div > Divisão da página. Desta forma, funciona como um container para conteúdo de fluxo. Uma vez que não possui um valor semântico, é muito utilizado para organizar melhor o conteúdo. 
        Cabeçalhos 
-       <hn> </hn>  Cabeçalho nível n para n de 1 a 6 
+       hn > Cabeçalho nível n para n de 1 a 6 
        <h1></h1> - <h2></h2> - <h3></h3> - <h4></h4> - <h5></h5> - <h6></h6>
        Parágrafos 
-       <p> </p>  Um simples páragrafo
+       p > Um simples páragrafo
        Links 
-       <a> </a>  Cria um link e inclui atributos em comum
+       a > Cria um link e inclui atributos em comum
          href – O URL do documento que será vinculado a este. Para e-mail: mailto e link externo: http
          name – O nome da âncora 
          target – Identifica a janela ou local em que o link deverá ser aberto: blank, self, top, parent 
@@ -60,51 +59,51 @@ a) I.
          onmouseover – É um evento JavaScript 
          onmouseout – É um evento JavaScript
        Listas 
-       <ol> </ol>  Uma lista ordenada
-       <ul> </ul>  Uma lista não ordenada 
-       <li> </li>  Um item da lista
-       <menu> </menu>  Um menu com uma lista de itens 
+       ol > Uma lista ordenada
+       ul > Uma lista não ordenada 
+       li > Um item da lista
+       menu > Um menu com uma lista de itens 
        Formatação de caracteres
-       <em> </em>  Maior ênfase em itálico 
-       <strong> </strong>  Maior ênfase em negrito 
-       <code> </code>  Amostra de código
-       <b> </b>  Texto em negrito
-       <i> </i>  Texto em itálico 
-       <u> </u>  Texto sublinhado
-       <s> </s>  Texto tachado
-       <sub> </sub>  Texto subscrito
-       <sup> </sup>  Texto sobrescrito
+       em > Maior ênfase em itálico 
+       strong > Maior ênfase em negrito 
+       code > Amostra de código
+       b > Texto em negrito
+       i > Texto em itálico 
+       u > Texto sublinhado
+       s > Texto tachado
+       sub > Texto subscrito
+       sup > Texto sobrescrito
        Outros elementos
-       <br>  Uma quebra de linha
-       <address> </address>  Assinaturas ou informações gerais sobre o autor de um documento
+       br > Uma quebra de linha
+       address > Assinaturas ou informações gerais sobre o autor de um documento
        Imagens
-       <img>  Insere uma imagem in-line no documento e inclui atributos comuns
+       img > Insere uma imagem in-line no documento e inclui atributos comuns
        Tabelas
-       <table> </table>  Cria uma tabela
-       <caption> </caption> A legenda para a tabela
-       <thead> </thead>  , <tbody>, <tfoot>
-       <tr> </tr>  Uma linha na tabela
-       <th> </th>  Um cabeçalho de célula da tabela
-       <td> </td>  Define uma célula de dados da tabela
+       table > Cria uma tabela
+       caption > A legenda para a tabela
+       thead > , tbody, tfoot
+       tr > Uma linha na tabela
+       th > Um cabeçalho de célula da tabela
+       td > Define uma célula de dados da tabela
        Formulários
-       <form> </form>  Define um formulário
+       form > Define um formulário
          action – Responsável por determinar o exato local para onde as informações coletadas no formulário deverão ser enviadas
          method – Método de empacotamento dos dados do formulário: get, post e enctype="multipart/form-data"
          name – Nome do objeto
-       <input>  Caixa de texto
+       input > Caixa de texto
          type – Tipo de dado: text, file, radio, checkbox, hidden, password, submit, reset, button, image name – Identificação do campo 
          size – Largura 
          maxlength – Número máximo de caracteres permitidos 
          value – Texto que aparece dentro da caixa ou nome do botão 
          checked value – Valor assumido quando este campo for selecionado 
-       <textarea> </textarea>  Permite criar elementos de entrada com características de texto
+       textarea > Permite criar elementos de entrada com características de texto
          rows – Tamanho da linha da caixa de texto 
          cols – Tamanho da coluna da caixa de texto 
          name – Identificação do campo 
          wrap – Quebra de linha da caixa de texto: off, virtual, physical 
-       <select> </select>  Seleção 
+       select > Seleção 
          name – Identificador
-       <option> </option>  Opção 
+       option > Opção 
          value – Valor do campo 
 
   II. O HTML semântico torna a estrutura de documentos para a web o mais claro tanto para programadores quanto para navegadores da web, mecanismos de pesquisa, leitores de tela, entre outras engines que processam essa informação. Quando utilizada corretamente, o HTML semântico ajuda os leitores de tela a interpretarem as informações de uma página para pessoas com deficiencia visual. Além disso, utilizar o HTML semantico também ajuda as ferramentas de busca a encontrarem a sua página e indicarem para mais pessoas.
@@ -117,7 +116,12 @@ a) I.
   Sua flexibilidade beneficia igualmente pessoas idosas, aquelas não fluentes na escrita de um idioma, pessoas com conexões lentas, ou usuários de tecnologias ultrapassadas, internautas novos ou pouco frequentes, usuários de telefones móveis, indivíduos com limitações temporárias, entre outros.
   Um website com adequado contraste de cores e com opção para alternância de tamanho da fonte beneficia igualmente o indivíduo com baixa visão, com a visão comprometida pela idade e quem faz uma busca em seu celular à luz do sol, por exemplo.
   
-   V. 
+  V. Escrever o conteúdo do site limpo, claro e objetivo. Diagramar o conteúdo dentro de um desenho de layout que obedece às mais importantes regras de usabilidade e design. 
+  Usar as recomendações do e a metodologia do W3C.
+
+
+
+
 
 
 
