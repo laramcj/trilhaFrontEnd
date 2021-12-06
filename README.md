@@ -20,7 +20,9 @@ c)
 
 ---
 ## 🚦 Desafio 2 - 
-a) I.
+a)
+
+ I.
        Tags estruturais
        <!– –> Cria um comentário - 
        !DOCTYPE html  A tag !DOCTYPE informa ao navegador a versão do HTML
@@ -41,7 +43,7 @@ a) I.
        div > Divisão da página. Desta forma, funciona como um container para conteúdo de fluxo. Uma vez que não possui um valor semântico, é muito utilizado para organizar melhor o conteúdo. 
        Cabeçalhos 
        hn > Cabeçalho nível n para n de 1 a 6 
-       <h1></h1> - <h2></h2> - <h3></h3> - <h4></h4> - <h5></h5> - <h6></h6>
+       < h1></h1> - < h2></h2> - < h3></h3> - < h4></h4> - < h5></h5> - < h6></h6>
        Parágrafos 
        p > Um simples páragrafo
        Links 
@@ -117,7 +119,83 @@ a) I.
   Um website com adequado contraste de cores e com opção para alternância de tamanho da fonte beneficia igualmente o indivíduo com baixa visão, com a visão comprometida pela idade e quem faz uma busca em seu celular à luz do sol, por exemplo.
   
   V. Escrever o conteúdo do site limpo, claro e objetivo. Diagramar o conteúdo dentro de um desenho de layout que obedece às mais importantes regras de usabilidade e design. 
-  Usar as recomendações do e a metodologia do W3C.
+  Usar as recomendações do e a metodologia do W3C
+
+  b) 
+  
+  I. A importância do CSS é a personalização da página web, é o CSS que nos possibilita decorar e estilizar de forma mais otimizada e coesa tornando o visual das páginas maia agradável. Quando utilizado mais de um CSS na mesma página o estilo é lido em cascata onde a ultima informação inserida irá se sobrepôr à anterior, caso exista uma mesma personalização para o mesmo campo.  Algumas vantagens que temos na utilização do CSS na nossa página é a execução de mudanças de forma mais rápida e fácil, ter as formatações aplicadas a várias páginas. 
+
+  II. A diferença entre Class e id são:
+  <br>Class: 
+   - para chamá-la no HTML utilizamos class dentro da tag;
+   - quando chamada no CSS é utilizaod o ".";
+   - é utilizada quando vamos repetir o elemento várias vezes na página;
+  
+
+  <br>id:
+   - para chamá-lo no HTML utilizamos id dentro da tag;
+   - quando chamado no CSS é utilizaod o "#";
+   - é utilizado apenas uma vez, quando o elemento é único.
+   - mais específico e sobrepõe a classe.
+  
+  Um mesmo elemento pode ter id e classe ao mesmo tempo. 
+
+  III. Podemos inserir o CSS na página de 3 maneiras:
+   - Inline: usado em elementos específicos coma tag < style >, deve ser aplicado individualmente. Este estilo tem a maior prioridade  na hierarquia dos 3. 
+   - Interno: é carregado e visualizado cada vez que se atualiza o site, pode acabar aumentando o tempo de carregamento. É inserido dentro da seção < head > através da tag < style >. As regras de CSS devem ser inseridas em cada página tornando esse estilo muito trabalhoso e demorado.
+   - Externo: o melhor entre os 3 estilos, é o mais simples e eficiente. Nesta opção é criado um arquipo ".css" responsável por aplicar a personalização desejada. O mesmo arquivo pode ser aplicado em mais de uma página e isso torna qualquer mudança mais eficiente. 
+
+  IV. Encadeamento é quando você quer uma personalização com mais especificidade. No encadeamento a leitura é feita da direita para a esquerda, pois é a ordem do HTML. Nos seletores encadeados não se usa a vírgula. Pode-se utilizar o agrupamento junto com o encadeamento. 
+  Agrupamento é quando a mesma estilização é utilizada por mais de um elemento. A separação dos elementos é feita por vírgulas. 
+
+  V. O motor de renderização do navegador representa cada elemento como uma caixa retangular, de acordo com o padrão definido pelo CSS conhecido como box (caixa/bloco) model. Dessa forma, o conteúdo do elemento é uma das quatro partes que compõem o box, sendo as demais o seu preenchimento, borda e margem. Na maioria dos casos, o que vemos é apenas o conteúdo do elemento, geralmente um texto, imagem, vídeo, etc. Esse conteúdo é o que consideramos as suas dimensões, altura e largura. Entretanto, é o conteúdo somado a margem, borda e preenchimento do elemento que determinam o espaço que o mesmo ocupa na tela do navegador. Os principais elementos que definem as dimensões e distanciamento das caixas são: Width / Height, Padding, Border (e Box-shadow). As áreas que compõem um box são: margin, padding, width e height. 
+  Padding, margin e Border. 
+
+  VI. Diferença entre margin e padding:
+  <br> Padding é o espaço entre o conteúdo e a borda. Padding cria um espaço entre o conteúdo e a borda e não afeta o espaçamento entre os elementos.
+  <br> Margin é o espaço fora do conteúdo, e é usada para criar um espaço dentre os elementos dispostos na tela. 
+
+  VII. Position é uma propriedade utilizada para definir o posicionamento de um elemento na tela.São eles:
+
+- static:
+    É o position padrão de todo elemento
+
+    div.static {
+        position: static;
+    }
+- relative:
+    Position relative é posicionado relativo a sua posição normal. diferente do static, recebe: top, bottom, right e left.
+
+    div.relative {
+        position: relative;
+        left: 30px;
+    }
+
+- fixed
+    Position fixed é posicionado em relação ao viewport. O elemento se manterá fixo mesmo se a tela for scrollada. Também recebe propriedades top, bottom, right e left.
+
+    div.fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+- absolute
+    Position absolute é posicionado em relação ao seu elemento pai. Se não houver elemento pai, se posiciona em relação ao body.
+
+    div.absolute {
+        position: absolute;
+        top: 80px;
+        right: 0;
+    }
+
+- sticky
+    Position sticky é similar ao fixed e se posiciona em relação a posição de scroll. Também recebe top, bottom, right e left.
+
+    div.sticky {
+        position: sticky;
+        top: 0;
+    }
 
 
 
