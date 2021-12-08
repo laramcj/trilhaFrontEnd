@@ -28,13 +28,13 @@ section{
 }
 
 section article{
-    justify-self: stretch;
-    align-self: stretch;
-    grid-row-start: 4;
-    grid-row-end: 6;
-    background: #999999;
-    margin: 5px;
+    border: 1px solid darkgray;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 17vh;
+    background-color: darkgray;
 }
+
 
 aside{
     grid-column-start: 3;
