@@ -2,7 +2,8 @@
 Repositório criado para trilhaFrontEnd NttData
 
 ---
-## 🚦 Desafio 3 - Flexbox
+## 🚦 Desafio 3 - 
+## Flexbox
 a) O Flexbox tem como meta ser um modo mais eficiente para criar layouts, alinhar e distribuir espaços entre itens em um container, mesmo quando as dimensões destes itens são desconhecidas e/ou dinâmicas (daí o termo "flex"). O Flexbox é um conjunto de propriedades que tem por objetivo organizar itens dentro de um elemento pai, normalmente chamado de container
 
 b) A propriedade flex-direction define a direção do eixo principal e pode tem quatro valores possíveis:

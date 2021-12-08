@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Grid Layout</h1>
+    <p>
+        a) CSS Grid Layout introduz um sistema bi-dimensional de grid (literalmente "grades") para CSS. Grids podem ser
+        usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface.
+        Grid é uma malha formada pela interseção de um conjunto de linhas horizontais e um conjunto de linhas verticais
+        – um dos conjuntos define colunas e outro linhas. Dentro de um grid, respeitando-se a configuração criada pelas
+        suas linhas, pode-se inserir elementos da marcação.
+    </p>
+    <p>
+        b) O Grid Container é a tag que envolve os itens do grid, ao indicar display: grid, essa tag passa a ser um Grid
+        Container.
+        Cria-se um grid container com as declarações CSS display: grid ou display: inline-grid para um elemento da
+        marcação. Assim declarando, todos os elementos filhos diretos daquele container se transformam em grid items.
+    </p>
+    <p>
+        c) Todos os elementos filhos diretos daquele container se transformam em grid items. Observando a renderização
+        em um navegador web você não notará nenhuma diferença em relação a renderização já conhecida de um elemento
+        container com seus cinco elementos filhos, pois no exemplo foi criado um grid constítuido de uma única coluna
+        para acomodar os elementos filhos.
+    </p>
+    <p>
+        d) Nas propriedades de grid podem ser utilizadas quaisquer unidades de medida. Para nos ajudar a criar layouts
+        flexíveis utilizando o grid, foi criada uma unidade nova. A unidade fr representa uma fração do espaço
+        disponível no container do grid. A próxima definição de grid cria três espaços com tamanhos iguais que aumentam
+        e diminuem de acordo com o espaço disponível.
+    </p>
+    <p>
+        e) Grids grandes, com muitas tracks podem usar a notação repeat() para repetir todas ou uma seção de track
+        listing. A notação repeat ( ) pode ser usada apenas para uma parte da track listing. A notação Repeat tem como
+        parâmetro um track listing, sendo assim você pode usá-lo para criar um padrão de repetição de tracks.
+    </p>
+    <p>
+        f) Devemos observar que quando definimos um grid definimos as trilhas do grid, não as linhas. O grid então nos
+        devolve linhas numeradas para usarmos ao posicionar itens. Em nossa grid de 3 colunas por duas linhas, temos
+        quatro linhas de colunas.Linhas são numeradas de acordo a forma de escrita do documento. Em uma linguagem da
+        esquerda para a direita, a linha 1 está à esquerda do grid. Em uma linguagem da direita para a esquerda, ela
+        está no lado direito do grid. Linhas também podem ser nomeadas, e veremos como fazer isso em um guia posterior
+        nessa série.
+    </p>
+    <p>
+        g) Uma célula de grid é a menor unidade em um grid. Conceitualmente é como se fosse uma célula de tabela. Como
+        vimos em nossos exemplos anteriores, uma vez que o grid é definido como o pai os itens filhos serão organizados
+        cada um em uma célula do grid definido.
+    </p>
+    <p>
+        h) Itens podem se espalhar por uma ou mais células ambas entre linhas ou colunas, e isto cria uma área de grid.
+        Áreas de grid devem ser retangulares – não é possível criar uma área em L por exemplo.
+    </p>
+</body>
+
+</html>
