@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Responsivo</title>
+    <title>Menu Flexbox-responsivo</title>
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
-    <div class="container_menu">
-        <nav class="menu">
-            <ul>
-                <a href="#" class="logo">Your logo</a>
-                <li><a class="menu__link order4" href="#">Menu 1</a></li>
-                <li><a class="menu__link order3" href="#">Menu 2</a></li>
-                <li><a class="menu__link order2" href="#">Menu 3</a></li>
-                <li><a class="menu__link order1" href="#">Menu 4</a></li>
-            </ul>
-        </nav>
-    </div>
-    
-            <div class="mobile-menu">
-                <span class="menu-icon open">&#x2261;</span>
-                <span class="menu-icon close">&#x2715;</span>
-              </div>
-        </div>
-    
-    <script src="./js/menu.js"></script>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="check-btn">
+            <img src="https://img.icons8.com/android/24/000000/menu.png" alt="Menu">
+        </label>
+        <label class="logo"> <a href="#">Your logo</a> </label>
+        <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+        </ul>
+    </nav>
+
 </body>
 
 </html>

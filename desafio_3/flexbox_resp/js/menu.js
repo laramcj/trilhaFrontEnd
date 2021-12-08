@@ -1,4 +1,4 @@
-function main(){
+    function main(){
     var menuIconOpen = document.getElementsByClassName("open")[0];
     var menuIconClose = document.getElementsByClassName("close")[0];
     var menuItems = document.getElementsByClassName("menu");
