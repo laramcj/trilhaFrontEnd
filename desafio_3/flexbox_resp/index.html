@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Flexbox-responsivo</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./resp.js"></script>
 
 </head>
 
@@ -14,18 +16,17 @@
 
     <nav>
         <input type="checkbox" id="check">
-        <label for="check" class="check-btn">
-            <img src="https://img.icons8.com/android/24/000000/menu.png" alt="Menu">
-        </label>
+                    <img id="btn_menu" src="./menu.png" alt="Menu">
+        
         <label class="logo"> <a href="#">Your logo</a> </label>
-        <ul id="navIt">
+        <ul id="menu_list">
             <li><a href="#">Menu 1</a></li>
             <li><a href="#">Menu 2</a></li>
             <li><a href="#">Menu 3</a></li>
             <li><a href="#">Menu 4</a></li>
         </ul>
     </nav>
-    <script src="./js/resp.js"></script>
+    
 
 </body>
 
