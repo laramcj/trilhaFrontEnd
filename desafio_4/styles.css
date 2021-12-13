@@ -139,7 +139,7 @@ body{
 }
 
 .main__content h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     background-color: #2F4C73;
     background-size: 100%;
     -webkit-background-clip: text;
@@ -149,7 +149,7 @@ body{
 }
 
 .main__content h2{
-    font-size: 4rem;
+    font-size: 3.5rem;
     background-color: #2F4C73;
     background-size: 100%;
     -webkit-background-clip: text;
@@ -166,15 +166,15 @@ fieldset{
 
 input, textarea{
     border-radius: 5px;
-    padding: 0.2em;
-    border: 1px solid #848A98;
+    padding: 0.5em;
+    border: 1.5px solid #CFD6E0;
 }
 
 .main__content-form {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    color: #848A98;
+    color: #CFD6E0;
     margin-bottom: 5px;
     width: max-content;
 }
@@ -200,15 +200,7 @@ label{
     grid-template-rows: 1fr 3fr;
     grid-row-gap: 5px;
 }
-/* 
-#subject{
-    margin: 10px;
-}
 
-#message{
-    margin: 10px;
-    width: 45vh;
-} */
 
 .main__btn{
     font-size: 2rem;
