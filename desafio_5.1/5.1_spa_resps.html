@@ -136,8 +136,43 @@
             VIII. O arquivo environment.ts contém as configurações de ambiente padrão. 
         </li>
     </ul>
-
     </p>
+    <p>
+        <strong>e)</strong>
+        <ul>
+            <li>
+                I. Text interpolation permite incorporar valores de string dinâmicos em seus modelos 
+                HTML. Ela é usada para alterar dinamicamente o que aparece em uma visualização 
+                do aplicativo, como a exibição de uma saudação personalizada que inclui o nome do usuário.
+            </li>
+            <li>
+                II. Com a interpolação, o Angular executa as seguintes tarefas: <br>
+                 - Avalia todas as expressões entre chaves duplas. <br>
+                 - Converte os resultados da expressão em strings. <br>
+                 - Vincula os resultados a quaisquer strings literais adjacentes. <br>
+                 - Atribui o composto a um elemento ou propriedade de diretiva. <br>
+            </li>
+            <li>
+                III. 
+                "@Component({
+                    template: 
+                    <div>
+                        <p> Meu nome é: {{nome}} e do meu guia é: {{guia}}</p>
+                        <p> Data de hoje: {{dataDesafio}}</p>
+                        <p> Faço parte da turma: {{numeroTurma}}</p>
+                    </div>
+                })
+                class AppComponent {
+                    nome = 'Lara Maia Corrêa Joaquim';
+                    guia = 'Elivel Santos Nascimento';
+                    dataDesafio = ;
+                    numeroTurma = 'Turma...';
+                }            
+                "
+            </li>
+        </ul>
+    </p>
+    
 
 </body>
 
