@@ -321,6 +321,98 @@
             </li>
         </ul>
     </p>
+    <p>
+        <strong>h)</strong>
+        <ul>
+            <li>
+                I. Template-driven forms usa o FormsModule, é assincrono e a maior parte da lógica está no template.
+                Já o Reactive Forms usa o "ReactiveFormsModule", é sincrono e a maior parte da lógica está no componente.
+            </li>
+            <li>
+                II. O Reactive Form nos permite remover a maior parte da lógica do template, tornando o código mais isolado e limpo. 
+                Com isso passamos ter maior facilidade na escrita de çodigos unitários.
+            </li>
+            <li>
+                III. ReactiveFormsComponent e FormsModule
+            </li>
+            <li>
+                IV. AbstractControl é a abstract class base para as 3 form control class:
+                FormControl, FormGroup, and FormArray. 
+
+                FormControl localiza o valor e o status de validade de um controle de formulário individual. Corresponde a um controle de formulário HTML, como uma caixa de entrada ou seletor
+                
+                FormGroup localiza o valor e o estado de validade de um grupo de instâncias AbstractControl. As propriedades do grupo incluem seus controles filhos. O formulário de nível superior em seu componente é um FormGroup.
+                
+                FormArray localiza o valor e o estado de validade de uma matriz numericamente indexada de instâncias AbstractControl.
+            </li>
+            <li>
+                V. 
+                    - FormControl: 
+                        1. Registre o module de reactive forms em sua aplicação. Este module declara as directives de forma reativa de que você precisa para usar as reactive forms.
+                        2. Gere uma nova instância de FormControl e salve-a no componente.
+                        3. Registre o FormControl no modelo.
+                    
+                    - FormGroup:
+                        1. Criar uma instância de FormGroup.
+                        2. Associar o FormGroup a um model e uma view.
+                        3. Salvar os dados do formulário.
+
+                    - FormArray:
+                        1. Importar a classe FormArray.
+                        2. Definir um FormArray control.
+                        3. Acessar o FormArray control com um método getter.
+                        4. Exibir o form array no template.      
+            </li>
+            <li>
+                VI. Quando os dados são atualizados na view:
+
+                        1. O usuário entra com um dado;
+                        2. O form emite um input event com o valor;
+                        3. O valor é passado para a instância do FormControl;
+                        4. O FormControl emite um novo valor utilizando o valueChanges;
+                        5. Quem estiver observando o valueChanges recebe o novo valor;
+
+                    Quando os dados vem do model para a view:
+
+                        1. O método setValue() é chamado, que atualiza o valor no FormControl;
+                        2. A instância do FormControl emite um novo value usando o valueChanges;
+                        3. Quem estiver observando o valueChanges recebe o novo valor;
+                        4. O elemento na view  é atualizado com o novo valor;
+            </li>
+            <li>
+                VII. O FormControl emite novos valores através do valueChanges. Os subscribers do valueChanges observam mudanças e atualizam a view.
+            </li>
+            <li>
+                VIII. É importante validar o formulário para recebermos dados de qualidades e completos. 
+                Também, através da valição, podemos fornecer feedbacks na view para informar o usuário de possíveis erros no preenchimento.
+
+                Em Reactive Forms adicionamos métodos de validação no form control nome na classe do componente. Temos dois tipos de validadores:
+                    - Sync validatores: funções sincronas que retornam um conjunto de erros de validação ou null imediatamente.
+                    - Async validatores: funções assincronas que retornam uma Promise ou Observable que retornarão um conjunto de erros de validação ou null.
+
+                Para apresentar os erros de form para o usuário, podemos seguir dessa forma:
+
+                <input type="text" id="name" class="form-control"
+                    formControlName="name" required>
+
+                <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="name.errors?.['required']">
+                        Name is required.
+                    </div>
+                    <div *ngIf="name.errors?.['minlength']">
+                        Name must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="name.errors?.['forbiddenName']">
+                        Name cannot be Bob.
+                    </div>
+                </div>
+
+                Dessa forma utilizamos o name getter que foi definido no componente.
+            </li>
+        </ul>
+    </p>
 
 
 </body>
