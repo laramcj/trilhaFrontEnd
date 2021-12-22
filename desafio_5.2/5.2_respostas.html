@@ -27,52 +27,79 @@
                 <br> Opcionalmente, estilos CSS aplicados ao modelo
             </li>
             <li>
-                III. Em uma aplicação básica é essencial ter: Components, Templates, Dependency injection.
-            </li>
-            <li>
-                IV. O Angular CLI é uma ferramenta open source desenvolvida pelo próprio time
-                do Angular e é utilizado para facilitar a criação de componentes, classes,
-                services e outros. É uma interface de linha de comando (command line interface)
-                para facilitar e acelerar a criação de nossas aplicações. Quando a versão 1.0
-                final do CLI foi lançada, ele se tornou a forma oficial para iniciar um novo
-                projeto em Angular. O Angular CLI é baseado no Webpack, uma ferramenta que ajuda
-                a processar e agrupar nossos diversos arquivos TypeScript, JavaScript, CSS, HTML
-                e imagens. Por baixo dos panos, o Webpack é responsável por estruturar o ponto de
-                entrada da aplicação, ou seja, a raiz contextual (arquivo de inicialização). <br>
+                III. Para criar um component usando o Angular CLI devemos:
 
-                Dentre algumas facilidades disponibilizadas pela ferramenta, podemos destacar a
-                criação de um novo projeto Angular: toda a estrutura inicial do projeto pode ser
-                construída com um simples comando ng new NOME-DO-PROJETO.
+                <br> - De uma janela do terminal, navegar para o diretório que contém a aplicação.
+                <br> - Rodar o ng generate component <nome-componente> command, onde <nome-componente> é o nome do seu
+                        novo componente.
+                        <br> Por padrão, este comando cria o seguinte:
+                        <br> - Uma pasta nomeada pelo componente;
+                        <br> - Um arquivo do componente, <nome-componente>.component.ts ;
+                            <br> - Um arquivo template, <nome-componente>.component.ts ;
+                                <br> - Um arquivo CSS, <nome-componente>.component.css ;
+                                    <br> - Um arquivo de especificação de teste, <nome-componente>.component.spec.ts ;
+                                        <br> Onde <nome-componente> é o nome do seu componente.
             </li>
             <li>
-                V. O arquivo angular.json contém as configurações globais da aplicação, também
-                define o arquivo que vai iniciar a aplicação, fazendo o SPA.
+                IV.a Reutilização de componentes é importante para evitar a duplicidade de código. Desta maneira se tem
+                um ganho de tempo e um código mais limpo.
             </li>
             <li>
-                VI. "dependencies": {
-                "@angular/animations": "~7.0.0",
-                "@angular/common": "~7.0.0",
-                "@angular/compiler": "~7.0.0",
-                "@angular/core": "~7.0.0",
-                "@angular/forms": "~7.0.0",
-                "@angular/http": "~7.0.0",
-                "@angular/platform-browser": "~7.0.0",
-                "@angular/platform-browser-dynamic": "~7.0.0",
-                "@angular/router": "~7.0.0",
-                "core-js": "^2.5.4",
-                "rxjs": "~6.3.3",
-                "zone.js": "~0.8.26"
-                },
-                Depois de criar o projeto Angular, navegar até o arquivo package.json. Lá dentro, encontrar o
-                "Dependencies": { }. O conteúdo do dependencies são as dependencies padrão (default)
+                V. Cada componente requer um seletor CSS. Um seletor instrui o Angular a instanciar esse componente
+                sempre que encontrar a tag correspondente no modelo HTML. Este seletor instrui o Angular a
+                instanciar este componente sempre que a tag 'app-component-overview' aparecer em um template.
             </li>
             <li>
-                VII. Package.json: Contém todas as dependências da aplicação, à medida que instalar
-                uma nova dependência, ela vai aparecer no arquivo.
+                VI. Um template é um bloco de HTML que diz ao Angular como renderizar o componente em seu aplicativo.
+                Para definir um template para seu componente há duas maneiras: referenciando um arquivo externo ou
+                diretamente no componente.
+                <br> - Para definir um template como um arquivo externo, adicione uma propriedade templateUrl ao
+                decorador @Component.
+
+                @Component({
+                    selector: 'app-component',
+                    templateUrl: './component.component.html'
+                    })
+
+                <br> - Para definir um template dentro do componente, adicione uma propriedade de template ao decorador
+                @Component que contém o HTML que você deseja usar.
+
+                @Component({
+                    selector: 'app-component-overview',
+                    template: '<h1>Hello World!</h1>'
+                    })
+
+                <br> - Se você quiser que seu template ocupe várias linhas, use crase (`). Por exemplo:
+
+                @Component({
+                selector: 'app-component-overview',
+                template: `
+                <h1>Hello World!</h1>
+                <p>This template definition spans multiple lines.</p>
+                `
+                })
             </li>
             <li>
-                VIII. O arquivo environment.ts contém as configurações de ambiente padrão.
+                VII.Declare os estilos de componente usados para seu modelo de uma das duas maneiras: referenciando um arquivo externo ou diretamente no componente.
+
+                <br> - Para declarar os estilos de um componente em um arquivo separado, adicione uma propriedade styleUrls ao decorador @Component.
+
+                @Component({
+                    selector: 'app-component',
+                    templateUrl: './component.component.html',
+                    styleUrls: ['./component.component.css']
+                    })
+
+                <br> - Para declarar os estilos dentro do componente, adicione uma propriedade styles ao decorador @Component que contém os estilos que deseja usar.
+
+                 @Component({
+                    selector: 'app-component-overview',
+                    template: '<h1>Hello World!</h1>',
+                    styles: ['h1 { font-weight: normal; }']
+                    })
+
+                <br> A propriedade styles usa uma matriz de strings que contém as declarações de regras CSS.
             </li>
         </ul>
     </p>
-   </body>
+</body>
