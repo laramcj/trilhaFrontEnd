@@ -6,13 +6,15 @@ import { ComponentePaiComponent } from './components/componente-pai/componente-p
 import { ComponenteFilhoComponent } from './components/componente-filho/componente-filho.component';
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
 import { AppRoutingModule } from './app-routing.module';
+import { QuadradoComponent } from './components/quadrado/quadrado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentePaiComponent,
     ComponenteFilhoComponent,
-    ListaNumerosComponent
+    ListaNumerosComponent,
+    QuadradoComponent
   ],
   imports: [
     BrowserModule,
