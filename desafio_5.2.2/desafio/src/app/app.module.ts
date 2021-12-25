@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentePaiComponent } from './components/componente-pai/componente-pai.component';
 import { ComponenteFilhoComponent } from './components/componente-filho/componente-filho.component';
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
-import { AppRoutingModule } from './app-routing.module';
 import { QuadradoComponent } from './components/quadrado/quadrado.component';
 import { CuboComponent } from './components/cubo/cubo.component';
 

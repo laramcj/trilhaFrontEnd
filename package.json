@@ -1,0 +1,19 @@
+{
+  "name": "trilhafrontend",
+  "version": "1.0.0",
+  "description": "Repositório criado para trilhaFrontEnd NttData",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laramcj/trilhaFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laramcj/trilhaFrontEnd/issues"
+  },
+  "homepage": "https://github.com/laramcj/trilhaFrontEnd#readme"
+}

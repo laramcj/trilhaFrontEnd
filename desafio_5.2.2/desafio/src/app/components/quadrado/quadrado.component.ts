@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-quadrado',
   templateUrl: './quadrado.component.html',
-  styleUrls: ['./quadrado.component.css']
+  styleUrls: ['./quadrado.component.scss']
 })
 export class QuadradoComponent implements OnInit {
 
@@ -17,7 +17,4 @@ export class QuadradoComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  
-
 }

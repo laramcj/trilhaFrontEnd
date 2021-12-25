@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h1>Desafio 5.2</h1>
+    <h2>Respostas:</h2>
+    <p>
+        <strong>Item 1: Reutilização de Componentes <br> a)</strong>
+        <ul>
+            <li>
+                I. Os componentes são os principais blocos de construção para aplicações angulares.
+            </li>
+            <li>
+                II. Cada componente consiste em:
+
+                <br> Um modelo HTML que declara o que é renderizado na página
+                <br> Uma classe Typescript que define o comportamento
+                <br> Um seletor CSS que define como o componente é usado em um modelo
+                <br> Opcionalmente, estilos CSS aplicados ao modelo
+            </li>
+            <li>
+                III. Para criar um component usando o Angular CLI devemos:
+
+                <br> - De uma janela do terminal, navegar para o diretório que contém a aplicação.
+                <br> - Rodar o ng generate component <nome-componente> command, onde <nome-componente> é o nome do seu
+                        novo componente.
+                        <br> Por padrão, este comando cria o seguinte:
+                        <br> - Uma pasta nomeada pelo componente;
+                        <br> - Um arquivo do componente, <nome-componente>.component.ts ;
+                            <br> - Um arquivo template, <nome-componente>.component.ts ;
+                                <br> - Um arquivo CSS, <nome-componente>.component.css ;
+                                    <br> - Um arquivo de especificação de teste, <nome-componente>.component.spec.ts ;
+                                        <br> Onde <nome-componente> é o nome do seu componente.
+            </li>
+            <li>
+                IV.a Reutilização de componentes é importante para evitar a duplicidade de código. Desta maneira se tem
+                um ganho de tempo e um código mais limpo.
+            </li>
+            <li>
+                V. Cada componente requer um seletor CSS. Um seletor instrui o Angular a instanciar esse componente
+                sempre que encontrar a tag correspondente no modelo HTML. Este seletor instrui o Angular a
+                instanciar este componente sempre que a tag 'app-component-overview' aparecer em um template.
+            </li>
+            <li>
+                VI. Um template é um bloco de HTML que diz ao Angular como renderizar o componente em seu aplicativo.
+                Para definir um template para seu componente há duas maneiras: referenciando um arquivo externo ou
+                diretamente no componente.
+                <br> - Para definir um template como um arquivo externo, adicione uma propriedade templateUrl ao
+                decorador @Component.
+
+                @Component({
+                selector: 'app-component',
+                templateUrl: './component.component.html'
+                })
+
+                <br> - Para definir um template dentro do componente, adicione uma propriedade de template ao decorador
+                @Component que contém o HTML que você deseja usar.
+
+                @Component({
+                selector: 'app-component-overview',
+                template: '<h1>Hello World!</h1>'
+                })
+
+                <br> - Se você quiser que seu template ocupe várias linhas, use crase (`). Por exemplo:
+
+                @Component({
+                selector: 'app-component-overview',
+                template: `
+                <h1>Hello World!</h1>
+                <p>This template definition spans multiple lines.</p>
+                `
+                })
+            </li>
+            <li>
+                VII.Declare os estilos de componente usados para seu modelo de uma das duas maneiras: referenciando um
+                arquivo externo ou diretamente no componente.
+
+                <br> - Para declarar os estilos de um componente em um arquivo separado, adicione uma propriedade
+                styleUrls ao decorador @Component.
+
+                @Component({
+                selector: 'app-component',
+                templateUrl: './component.component.html',
+                styleUrls: ['./component.component.css']
+                })
+
+                <br> - Para declarar os estilos dentro do componente, adicione uma propriedade styles ao decorador
+                @Component que contém os estilos que deseja usar.
+
+                @Component({
+                selector: 'app-component-overview',
+                template: '<h1>Hello World!</h1>',
+                styles: ['h1 { font-weight: normal; }']
+                })
+
+                <br> A propriedade styles usa uma matriz de strings que contém as declarações de regras CSS.
+            </li>
+        </ul>
+    </p>
+    <p>
+        <strong>Item 2: Rotas</strong>
+        <ul>
+            <li>
+                I.O comando a seguir usa o Angular CLI para gerar um aplicativo Angular básico com um módulo de
+                roteamento de aplicativo, chamado AppRoutingModule, que é um NgModule onde você pode configurar suas
+                rotas. O nome do aplicativo no exemplo a seguir é routing-app.
+                <br>
+                ng new routing-app --routing --defaults
+            </li>
+            <li>
+                II. Adicionando componentes para roteamento
+                Para usar o roteador Angular, um aplicativo precisa ter pelo menos dois componentes para que possa
+                navegar de um para o outro. Para criar um componente usando a CLI, digite o seguinte na linha de
+                comando, onde primeiro é o nome do seu componente:
+
+                ng generate component first
+
+                Repita essa etapa para um segundo componente, mas dê a ele um nome diferente. Aqui, o novo nome é o
+                segundo.
+
+                ng generate component second
+            </li>
+            <li>
+                III. Navigate é baseado no conjunto de comandos fornecido e em um ponto de partida. Se nenhuma rota de
+                partida for fornecida, a navegação é absoluta.
+            </li>
+            <li>
+                IV. isactive() retorna se o url está ativado.
+            </li>
+            <li>
+                V. No Angular, a prática recomendada é carregar e configurar o roteador em um módulo separado de nível
+                superior que é dedicado ao roteamento e importado pelo AppModule raiz.
+            </li>
+            <li>
+                VI. Atua como um espaço reservado que o Angular preenche dinamicamente com base no estado atual do
+                roteador.
+            </li>
+            <li>
+                VII.
+            </li>
+            <li>
+                VIII.
+            </li>
+            <li>
+                IX. Lazy Load instancia a váriavel apenas quando a mesma é chamada.
+                Você pode configurar suas rotas para módulos de carregamento lento, o que significa que o Angular
+                carrega apenas os módulos conforme necessário, em vez de carregar todos os módulos quando o aplicativo é
+                iniciado. Além disso, pré-carregue partes de seu aplicativo em segundo plano para melhorar a experiência
+                do usuário.
+
+                const routes: Routes = [
+                {
+                path: 'customers',
+                loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+                }
+                ];
+
+            </li>
+            <li>
+                X. Por padrão, os NgModules são carregados rapidamente, o que significa que, assim que o aplicativo é
+                carregado, todos os NgModules, sejam eles imediatamente necessários ou não.
+
+                const routes: Routes = [
+                {
+                path: '',
+                redirectTo: '',
+                pathMatch: 'full'
+                }
+                ];
+
+            </li>
+        </ul>
+    </p>
+    <p>
+        <strong>Item 3: Pipes</strong>
+        <ul>
+            <li>
+                I. Use Pipes para transformar strings, valores monetários, datas e outros dados para exibição. Pipes são
+                funções simples para usar em expressões de modelo para aceitar um valor de entrada e retornar um valor
+                transformado. Pipes são úteis porque você pode usá-los em todo o aplicativo, enquanto declara cada pipe
+                apenas uma vez. O Pipe funciona como uma máscara na sua aplicação. Um exemplo seria ao consultar uma api
+                externa você receba um JSON com uma data no formato americano, com o Angular você poderia criar um pipe
+                para tratar essa data e exibi-lá ao usuário no formato pt-br.
+            </li>
+            <li>
+                II. A seguir estão os pipes comumente usados para a formatação de dados: DatePipe, UpperCasePipe,
+                LowerCasePipe, CurrencyPipe, DecimalPipe, PercentPipe.
+            </li>
+            <li>
+                III. DatePipe: Formata o valor da data de acordo com as regras locais.
+                <br> UpperCasePipe: Transforma o texto todo em maiúsculas.
+                <br> LowerCasePipe: Transforma o texto todo em minúsculas.
+                <br> CurrencyPipe: Transforma um número em uma string de moeda, formatada de acordo com as regras de
+                localidade.
+                <br> DecimalPipe: Transforma um número em uma string com um ponto decimal, formatado de acordo com as
+                regras de localidade.
+                <br> PercentPipe: Transforma um número em uma string de porcentagem, formatada de acordo com as regras
+                de localidade.
+            </li>
+            <li>
+                IV. 
+            </li>
+        </ul>
+    </p>
+</body>

@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-quadrado',
-  templateUrl: './quadrado.component.html',
-  styleUrls: ['./quadrado.component.css']
+  selector: 'app-cubo',
+  templateUrl: './cubo.component.html',
+  styleUrls: ['./cubo.component.scss']
 })
-export class QuadradoComponent implements OnInit {
-
+export class CuboComponent implements OnInit {
+  
   valor:number = 0;
 
   constructor( private router : Router){
     this.valor = this.router.getCurrentNavigation()?.extras.state?.valorRota;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
-
-  
 
 }
