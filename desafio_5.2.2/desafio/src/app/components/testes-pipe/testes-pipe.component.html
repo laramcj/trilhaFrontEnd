@@ -1,0 +1,7 @@
+<hr aria-hidden="true">
+<p>Data do evento: {{ data1 | date : 'dd/MM/yyyy' }}</p>
+<p>Preço: {{ 35 | currency:'BRL' }}.</p>
+<p>Ingressos limitados ({{ 0.8465 |  percent:'2.2-2'}} já foram vendidos)</p>
+<p>Código: {{ '12345678901234567890' | codigoConvite }}</p>
+<p>CPF do participante: {{ '12345678901' | cpf}}</p>
+<p>CNPJ da empresa do participante: {{ '12345678901234' | cnpj}}</p>

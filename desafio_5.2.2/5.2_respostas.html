@@ -196,17 +196,134 @@
             </li>
             <li>
                 III. DatePipe: Formata o valor da data de acordo com as regras locais.
+                {{ dateObj | date }} // output is 'Jun 15, 2015'
+                {{ dateObj | date:'medium' }} // output is 'Jun 15, 2015, 9:43:11 PM'
+                {{ dateObj | date:'shortTime' }} // output is '9:43 PM'
+                {{ dateObj | date:'mm:ss' }} // output is '43:11'
                 <br> UpperCasePipe: Transforma o texto todo em maiúsculas.
+                @Pipe({name: 'uppercase'})
+                export class UpperCasePipe implements PipeTransform {
+                /**
+                * @param value The string to transform to upper case.
+                */
+                transform(value: string): string;
+                transform(value: null|undefined): null;
+                transform(value: string|null|undefined): string|null;
+                transform(value: string|null|undefined): string|null {
+                if (value == null) return null;
+                if (typeof value !== 'string') {
+                throw invalidPipeArgumentError(UpperCasePipe, value);
+                }
+                return value.toUpperCase();
+                }
+                }
+
                 <br> LowerCasePipe: Transforma o texto todo em minúsculas.
+                @Component({
+                selector: 'lowerupper-pipe',
+                template: `<div>
+                    <label>Name: </label><input #name (keyup)="change(name.value)" type="text">
+                    <p>In lowercase:
+                        <pre>'{{value | lowercase}}'</pre>
+                        <p>In uppercase:
+                            <pre>'{{value | uppercase}}'</pre>
+                </div>`
+                })
+                export class LowerUpperPipeComponent {
+                // TODO(issue/24571): remove '!'.
+                value!: string;
+                change(value: string) {
+                this.value = value;
+                }
+                }
+
                 <br> CurrencyPipe: Transforma um número em uma string de moeda, formatada de acordo com as regras de
                 localidade.
+                @Component({
+                selector: 'currency-pipe',
+                template: `<div>
+                    <!--output '$0.26'-->
+                    <p>A: {{a | currency}}</p>
+
+                    <!--output 'CA$0.26'-->
+                    <p>A: {{a | currency:'CAD'}}</p>
+
+                    <!--output 'CAD0.26'-->
+                    <p>A: {{a | currency:'CAD':'code'}}</p>
+
+                    <!--output 'CA$0,001.35'-->
+                    <p>B: {{b | currency:'CAD':'symbol':'4.2-2'}}</p>
+
+                    <!--output '$0,001.35'-->
+                    <p>B: {{b | currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
+
+                    <!--output '0 001,35 CA$'-->
+                    <p>B: {{b | currency:'CAD':'symbol':'4.2-2':'fr'}}</p>
+
+                    <!--output 'CLP1' because CLP has no cents-->
+                    <p>B: {{b | currency:'CLP'}}</p>
+                </div>`
+                })
+                export class CurrencyPipeComponent {
+                a: number = 0.259;
+                b: number = 1.3495;
+                }
+
                 <br> DecimalPipe: Transforma um número em uma string com um ponto decimal, formatado de acordo com as
                 regras de localidade.
+                @Component({
+                selector: 'number-pipe',
+                template: `<div>
+
+                    <p>
+                        No specified formatting:
+                        {{pi | number}}
+                        <!--output: '3.142'-->
+                    </p>
+
+                    <p>
+                        With digitsInfo parameter specified:
+                        {{pi | number:'4.1-5'}}
+                        <!--output: '0,003.14159'-->
+                    </p>
+
+                    <p>
+                        With digitsInfo and
+                        locale parameters specified:
+                        {{pi | number:'4.1-5':'fr'}}
+                        <!--output: '0 003,14159'-->
+                    </p>
+
+                </div>`
+                })
+                export class NumberPipeComponent {
+                pi: number = 3.14159265359;
+                }
+
                 <br> PercentPipe: Transforma um número em uma string de porcentagem, formatada de acordo com as regras
                 de localidade.
+                @Component({
+                selector: 'percent-pipe',
+                template: `<div>
+                    <!--output '26%'-->
+                    <p>A: {{a | percent}}</p>
+
+                    <!--output '0,134.950%'-->
+                    <p>B: {{b | percent:'4.3-5'}}</p>
+
+                    <!--output '0 134,950 %'-->
+                    <p>B: {{b | percent:'4.3-5':'fr'}}</p>
+                </div>`
+                })
+                export class PercentPipeComponent {
+                a: number = 0.259;
+                b: number = 1.3495;
+                }
             </li>
             <li>
-                IV. 
+                IV. Criando canais personalizados para encapsular transformações que não são fornecidas com os canais
+                integrados. Em seguida, use seu canal personalizado em expressões de modelo, da mesma forma que você usa
+                canais internos - para transformar valores de entrada em valores de saída para exibição.
             </li>
         </ul>
     </p>

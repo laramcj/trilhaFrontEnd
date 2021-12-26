@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentePaiComponent } from './components/componente-pai/componente-pai.component';
@@ -8,6 +7,10 @@ import { ComponenteFilhoComponent } from './components/componente-filho/componen
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
 import { QuadradoComponent } from './components/quadrado/quadrado.component';
 import { CuboComponent } from './components/cubo/cubo.component';
+import { TestesPipeComponent } from './components/testes-pipe/testes-pipe.component';
+import { CodigoConvitePipe } from './pipes/codigo-convite.pipe';
+import { CpfPipe } from './pipes/cpf.pipe';
+import { CnpjPipe } from './pipes/cnpj.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { CuboComponent } from './components/cubo/cubo.component';
     ComponenteFilhoComponent,
     ListaNumerosComponent,
     QuadradoComponent,
-    CuboComponent
+    CuboComponent,
+    TestesPipeComponent,
+    CodigoConvitePipe,
+    CpfPipe,
+    CnpjPipe
   ],
   imports: [
     BrowserModule,

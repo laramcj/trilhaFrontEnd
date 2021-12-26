@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { CuboComponent } from './components/cubo/cubo.component';
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
 import { QuadradoComponent } from './components/quadrado/quadrado.component';
+import { TestesPipeComponent } from './components/testes-pipe/testes-pipe.component';
 
 
 const routes: Routes = [
   { path: 'lista', component: ListaNumerosComponent},
   { path: 'quadrado', component: QuadradoComponent },
-  { path: 'cubo', component: CuboComponent}
+  { path: 'cubo', component: CuboComponent },
+  { path: 'pipe', component: TestesPipeComponent }
 ];
 
 @NgModule({
