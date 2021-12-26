@@ -145,9 +145,15 @@
             </li>
             <li>
                 VII.
+                <button  (click)="onCalculateCube(numeroComponent)" >
+                    Quanto é {{ numeroComponent }} ao cubo?
+                  </button>
             </li>
             <li>
-                VIII.
+                VIII. 
+                <button [routerLink]="['/quadrado']" [state]="{ valorRota: numeroComponent }">
+                    Quanto é {{ numeroComponent }} ao quadrado?
+                  </button>
             </li>
             <li>
                 IX. Lazy Load instancia a váriavel apenas quando a mesma é chamada.
