@@ -11,7 +11,7 @@ export class CuboComponent implements OnInit {
   valor:number = 0;
 
   constructor( private router : Router){
-    this.valor = this.router.getCurrentNavigation()?.extras.state?.valorRota;
+    this.valor = this.router.getCurrentNavigation()?.extras.queryParams['valor'];
   }
 
   ngOnInit(): void {
