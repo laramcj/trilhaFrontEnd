@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h1>Desafio 5.3</h1>
+    <h2>Respostas:</h2>
+    <p>
+        <strong>Item 1: Services
+            <br> a)</strong>
+        <ul>
+            <li>
+                I. Service é uma categoria ampla que abrange qualquer valor, função ou recurso de que um aplicativo
+                precisa. Um Service é normalmente uma classe com um propósito estreito e bem definido. Deve fazer algo
+                específico e bem feito.
+            </li>
+            <li>
+                II. O Angular distingue Components de Services para aumentar a modularidade e a capacidade de
+                reutilização. Ao separar a funcionalidade relacionada à visualização de um componente de outros tipos de
+                processamento, você pode tornar suas classes de componente enxutas e eficientes.
+            </li>
+            <li>
+                III. Idealmente, a função de um componente é permitir a experiência do usuário e nada mais. Um
+                componente deve apresentar propriedades e métodos para vinculação de dados, a fim de mediar entre a
+                visualização (renderizada pelo modelo) e a lógica do aplicativo (que geralmente inclui alguma noção de
+                um modelo).
+            </li>
+            <li>
+                IV. Um componente pode delegar certas tarefas aos serviços, como buscar dados do servidor, validar a
+                entrada do usuário ou registrar diretamente no console.
+            </li>
+            <li>
+                V. Falso,
+                Você deve registrar pelo menos um provedor de qualquer serviço que irá usar. O provedor pode fazer
+                parte dos próprios metadados do serviço, disponibilizando esse serviço em qualquer lugar, ou você pode
+                registrar provedores com módulos ou componentes específicos.
+            </li>
+            <li>
+                VI. Um Singleton Service é um serviço para o qual existe apenas uma instância em um aplicativo.
+                <br> Existem duas maneiras de tornar um serviço um singleton no Angular:
+                <br> - Defina a propriedade providedIn de @Injectable () como "root".
+                <br> - Inclui o serviço no AppModule ou em um módulo que só é importado pelo AppModule.
+            </li>
+            <li>
+                VII.
+            </li>
+        </ul>
+    </p>
+    <p>
+        <strong>b)</strong>
+        <ul>
+            <li>
+                I. DI é conectado à estrutura Angular e usado em qualquer lugar para fornecer novos componentes com os
+                serviços ou outras coisas de que precisam. Componentes consomem serviços; ou seja, você pode injetar um
+                serviço em um componente, dando ao componente acesso a essa classe de serviço.
+            </li>
+            <li>
+                II. Falso. Para definir uma classe como um serviço no Angular, use o decorador @Injectable () para
+                fornecer os metadados que permitem que o Angular os injete em um componente como uma dependência. Da
+                mesma forma, use o decorador @Injectable () para indicar que um componente ou outra classe (como outro
+                serviço, um pipe ou um NgModule) tem uma dependência.
+
+                <br> O injetor é o mecanismo principal. O Angular cria um injetor para todo o aplicativo para você
+                durante o processo de bootstrap e injetores adicionais conforme necessário. Você não precisa criar
+                injetores.
+
+                <br> Um injetor cria dependências e mantém um contêiner de instâncias de dependência que ele reutiliza,
+                se possível.
+
+                <br> Um provedor é um objeto que informa a um injetor como obter ou criar uma dependência.
+            </li>
+            <li>
+                III. Para qualquer dependência necessária em seu aplicativo, você deve registrar um provedor com o
+                injetor do aplicativo, para que o injetor possa usar o provedor para criar novas instâncias. Para um
+                serviço, o provedor normalmente é a própria classe de serviço.
+
+                <br> Uma dependência não precisa ser um serviço - pode ser uma função, por exemplo, ou um valor.
+
+                <br> Quando o Angular cria uma nova instância de uma classe de componente, ele determina quais serviços
+                ou outras dependências esse componente precisa, observando os tipos de parâmetro do construtor.
+                <br> Quando o Angular descobre que um componente depende de um serviço, ele primeiro verifica se o
+                injetor tem alguma instância existente desse serviço. Se uma instância de serviço solicitada ainda não
+                existe, o injetor faz uma usando o provedor registrado e a adiciona ao injetor antes de retornar o
+                serviço ao Angular.
+
+                <br> Quando todos os serviços solicitados forem resolvidos e retornados, o Angular pode chamar o
+                construtor do componente com esses serviços como argumentos.
+            </li>
+        </ul>
+    </p>
+    <p>
+        <strong>c)</strong>
+        <ul>
+            <li>
+                I. HTTP é um protocolo (protocol) que permite a obtenção de recursos, como documentos HTML. É a base de
+                qualquer troca de dados na Web e um protocolo cliente-servidor, o que significa que as requisições são
+                iniciadas pelo destinatário, geralmente um navegador da Web. Um documento completo é reconstruído a
+                partir dos diferentes sub-documentos obtidos, como por exemplo texto, descrição do layout, imagens,
+                vídeos, scripts e muito mais.
+            </li>
+            <li>
+                II.
+                - SOAP: opera com as duas funções básicas - GET e POST. GET é usado para recuperar dados do servidor,
+                enquanto POST é usado para adicionar ou modificar dados.
+                - REST: por sua vez, altera o estado da fonte correspondente, fazendo uma solicitação ao URI (Uniform
+                Resource Identifier).
+                - GRAPHIQL: potencializa solicitações de dois tipos - consultas que recuperam dados do servidor e
+                mutações que alteram os dados.
+            </li>
+            <li>
+                III. O HTTP client service oferece os seguintes recursos principais.
+
+                <br> - A capacidade de solicitar objetos de resposta digitados.
+                <br> - Tratamento de erros simplificado.
+                <br> - Recursos de testabilidade.
+                <br> - Interceptação de solicitação e resposta.
+            </li>
+            <li>
+                IV. Antes de usar o HttpClient, você precisa importar o Angular HttpClientModule. A maioria dos
+                aplicativos faz isso no AppModule raiz.
+
+                import { NgModule } from '@angular/core';
+                import { BrowserModule } from '@angular/platform-browser';
+                import { HttpClientModule } from '@angular/common/http';
+
+                @NgModule({
+                imports: [
+                BrowserModule,
+                // import HttpClientModule after BrowserModule.
+                HttpClientModule,
+                ],
+                declarations: [
+                AppComponent,
+                ],
+                bootstrap: [ AppComponent ]
+                })
+                export class AppModule {}
+            </li>
+            <li>
+                V. Verdadeiro, O serviço HttpClient faz uso de observáveis para todas as transações. Você deve importar
+                os símbolos observáveis e de operador RxJS que aparecem nos fragmentos de exemplo. Essas importações de
+                ConfigService são típicas.
+                import { Observable, throwError } from 'rxjs';
+                import { catchError, retry } from 'rxjs/operators';
+            </li>
+            <li>
+                VI.
+                GET: O método GET solicita uma representação do recurso especificado. As solicitações que usam GET devem
+                recuperar apenas dados.
+                POST: O método POST envia uma entidade para o recurso especificado, geralmente causando uma mudança no
+                estado ou efeitos colaterais no servidor.
+                PUT: O método PUT substitui todas as representações atuais do recurso de destino pela carga útil da
+                solicitação.
+                DELETE: O método DELETE exclui o recurso especificado.
+                PATCH: O método PATCH aplica modificações parciais a um recurso.
+            </li>
+            <li>
+                VII. Verdadeiro, O método assíncrono envia uma solicitação HTTP e retorna um Observable que emite os
+                dados solicitados quando a resposta é recebida. O tipo de retorno varia com base nos valores observe e
+                responseType que você passa para a chamada.
+            </li>
+            <li>
+                VIII. Pode assumir os seguintes valores:
+
+                ""
+                Uma string responseType vazia é igual a "text", o tipo padrão.
+
+                "arraybuffer"
+                A resposta é um ArrayBuffer JavaScript contendo dados binários.
+
+                "blob"
+                A resposta é um objeto Blob que contém os dados binários.
+
+                "document"
+                A resposta é um documento HTML ou XML XMLDocument, conforme apropriado com base no tipo MIME dos dados
+                recebidos. Consulte HTML em XMLHttpRequest para saber mais sobre como usar XHR para buscar conteúdo
+                HTML.
+
+                "json"
+                A resposta é um objeto JavaScript criado pela análise do conteúdo dos dados recebidos como JSON.
+
+                "text"
+                A resposta é um texto em um objeto DOMString.
+
+                "ms-stream"
+                A resposta é parte de um download de streaming; esse tipo de resposta só é permitido para solicitações
+                de download e é compatível apenas com o Internet Explorer.
+            </li>
+            <li>
+                IX.
+                200 OK
+                Estas requisição foi bem sucedida. O significado do sucesso varia de acordo com o método HTTP:
+                400 Bad Request
+                Essa resposta significa que o servidor não entendeu a requisição pois está com uma sintaxe inválida.
+                401 Unauthorized
+                Embora o padrão HTTP especifique "unauthorized", semanticamente, essa resposta significa
+                "unauthenticated". Ou seja, o cliente deve se autenticar para obter a resposta solicitada.
+                403 Forbidden
+                O cliente não tem direitos de acesso ao conteúdo portanto o servidor está rejeitando dar a resposta.
+                Diferente do código 401, aqui a identidade do cliente é conhecida.
+                404 Not Found
+                O servidor não pode encontrar o recurso solicitado. Este código de resposta talvez seja o mais famoso
+                devido à frequência com que acontece na web.
+                405 Method Not Allowed
+                O método de solicitação é conhecido pelo servidor, mas foi desativado e não pode ser usado. Os dois
+                métodos obrigatórios, GET e HEAD, nunca devem ser desabilitados e não devem retornar este código de
+                erro.
+                408 Request Timeout
+                Esta resposta é enviada por alguns servidores em uma conexão ociosa, mesmo sem qualquer requisição
+                prévia pelo cliente. Ela significa que o servidor gostaria de derrubar esta conexão em desuso. Esta
+                resposta é muito usada já que alguns navegadores, como Chrome, Firefox 27+, ou IE9, usam mecanismos HTTP
+                de pré-conexão para acelerar a navegação. Note também que alguns servidores meramente derrubam a conexão
+                sem enviar esta mensagem.
+                409 Conflict
+                Esta resposta será enviada quando uma requisição conflitar com o estado atual do servidor.
+                500 Internal Server Error
+                O servidor encontrou uma situação com a qual não sabe lidar.
+                501 Not Implemented
+                O método da requisição não é suportado pelo servidor e não pode ser manipulado. Os únicos métodos
+                exigidos que servidores suportem (e portanto não devem retornar este código) são GET e HEAD.
+                502 Bad Gateway
+                Esta resposta de erro significa que o servidor, ao trabalhar como um gateway a fim de obter uma resposta
+                necessária para manipular a requisição, obteve uma resposta inválida.
+                503 Service Unavailable
+                O servidor não está pronto para manipular a requisição. Causas comuns são um servidor em manutenção ou
+                sobrecarregado. Note que junto a esta resposta, uma página amigável explicando o problema deveria ser
+                enviada. Estas respostas devem ser usadas para condições temporárias e o cabeçalho HTTP Retry-After:
+                deverá, se possível, conter o tempo estimado para recuperação do serviço. O webmaster deve também tomar
+                cuidado com os cabeçalhos relacionados com o cache que são enviados com esta resposta, já que estas
+                respostas de condições temporárias normalmente não deveriam ser postas em cache.
+                504 Gateway Timeout
+                Esta resposta de erro é dada quando o servidor está atuando como um gateway e não obtém uma resposta a
+                tempo.
+
+            </li>
+            <li>
+                X.
+                /* GET heroes whose name contains search term */
+                searchHeroes(term: string): Observable<Hero[]> {
+                    term = term.trim();
+
+                    // Add safe, URL encoded search parameter if there is a search term
+                    const options = term ?
+                    { params: new HttpParams().set('name', term) } : {};
+
+                    return this.http.get<Hero[]>(this.heroesUrl, options)
+                        .pipe(
+                        catchError(this.handleError<Hero[]>('searchHeroes', []))
+                            );
+                            }
+
+                            /** POST: add a new hero to the database */
+                            addHero(hero: Hero): Observable<Hero> {
+                                return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
+                                    .pipe(
+                                    catchError(this.handleError('addHero', hero))
+                                    );
+                                    }
+
+                                    /** DELETE: delete the hero from the server */
+                                    deleteHero(id: number): Observable<unknown> {
+                                        const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
+                                        return this.http.delete(url, httpOptions)
+                                        .pipe(
+                                        catchError(this.handleError('deleteHero'))
+                                        );
+                                        }
+
+                                        /** PUT: update the hero on the server. Returns the updated hero upon success.
+                                        */
+                                        updateHero(hero: Hero): Observable<Hero> {
+                                            return this.http.put<Hero>(this.heroesUrl, hero, httpOptions)
+                                                .pipe(
+                                                catchError(this.handleError('updateHero', hero))
+                                                );
+                                                }
+            </li>
+            <li>
+                XI.Um cabeçalho de solicitação é um cabeçalho HTTP que pode ser usado em uma solicitação HTTP para
+                fornecer informações sobre o contexto da solicitação, para que o servidor possa personalizar a resposta.
+                Por exemplo, os cabeçalhos Accept- * indicam os formatos permitidos e preferidos da resposta. Outros
+                cabeçalhos podem ser usados para fornecer credenciais de autenticação (por exemplo, Autorização), para
+                controlar o armazenamento em cache ou para obter informações sobre o agente do usuário ou referenciador,
+                etc.
+
+            </li>
+            <li>
+                XII. A maioria dos interceptores transforma a solicitação de saída antes de passá-la para o próximo
+                interceptor na cadeia, chamando next.handle (formerReq). Um interceptor também pode transformar o fluxo
+                de eventos de resposta, aplicando operadores RxJS adicionais no fluxo retornado por next.handle ().
+            </li>
+            <li>
+                XIII.
+                HTTP Header Interceptor
+                Formatando respostas JSON
+                Manipulação de erros
+            </li>
+        </ul>
+    </p>
+    <p>
+        <strong>d)</strong>
+        <ul>
+            <li>
+                I. RxJS é uma biblioteca para compor programas assíncronos e baseados em eventos usando sequências
+                observáveis. Ele fornece um tipo de núcleo, o Observable, tipos de satélite (Observer, Schedulers,
+                Assuntos) e operadores inspirados em Array # extras (mapear, filtrar, reduzir, todos, etc) para permitir
+                o tratamento de eventos assíncronos como coleções.
+            </li>
+            <li>
+                II. Uma promise é um cálculo que pode (ou não) eventualmente retornar um único valor.
+                <br> Um Observable é um cálculo avaliado vagarosamente que pode retornar de forma síncrona ou assíncrona
+                zero a (potencialmente) valores infinitos a partir do momento em que é invocado.
+            </li>
+            <li>
+                III. Um programa baseado em eventos tem um Observer que "escuta/observa" um Observable através de eventos. 
+            </li>
+            <li>
+                IV. Observer: é uma coleção de callbacks que sabem ouvir os valores entregues pelo Observable.
+                <br> O observer pattern é um padrão de design de software no qual um objeto, denominado assunto, mantém
+                uma lista de seus dependentes, chamados de observadores, e os notifica automaticamente sobre quaisquer
+                mudanças de estado, geralmente chamando um de seus métodos.
+            </li>
+            <li>
+                V. Na programação orientada a objetos, o padrão do iterador(iterator pattern) é um padrão de design no
+                qual um iterador é usado para percorrer um contêiner e acessar os elementos do contêiner. O padrão do
+                iterador desacopla algoritmos de contêineres; em alguns casos, os algoritmos são necessariamente
+                específicos do contêiner e, portanto, não podem ser separados.
+            </li>
+            <li>
+                VI.A programação funcional (FP) define as operações padrão em coleções.
+                É um paradigma declarativo que trata a computação como a avaliação de funções matemáticas.             
+                A maioria das operações que você realiza em coleções pode ser realizada com cinco funções simples:
+                map, filter, mergeAll, reduce, zip.
+            </li>
+            <li>
+                VII.
+                Os conceitos essenciais em RxJS que resolvem o gerenciamento de eventos assíncronos são:
+                <br>Observable: representa a ideia de uma coleção invocável de valores ou eventos futuros.
+                <br>Observer: é uma coleção de callbacks que sabem ouvir os valores entregues pelo Observable.
+                <br>Subscription: representa a execução de um Observable, é principalmente útil para cancelar a execução.
+                <br>Operators: são funções puras que permitem um estilo de programação funcional de lidar com coleções com operações como mapear, filtrar, concat, reduzir, etc.
+                <br>Subject: é equivalente a um EventEmitter e a única forma de multicast de um valor ou evento para vários Observadores.
+                <br>Schedulers: são despachantes centralizados para controlar a simultaneidade, permitindo-nos coordenar quando a computação acontece, por exemplo, setTimeout ou requestAnimationFrame ou outros.
+            </li>
+            <li>
+                VIII. Operadores de criação podem ser chamados como funções autônomas para criar um novo Observable.
+                <br> Diferentes dos operadores canalizáveis, os operadores de criação são funções que podem ser usadas
+                para criar um Observable com algum comportamento predefinido comum ou juntando-se a outros Observable.
+                Creation Operators
+                ajax, bindCallback, bindNodeCallback, defer, empty, from, fromEvent, fromEventPattern, generate,
+                interval, of, range, throwError, timer, iif
+            </li>
+            <li>
+                IX.- ajax: Ele cria um observável para uma solicitação Ajax com um objeto de solicitação com url,
+                cabeçalhos, etc. ou uma string para uma URL.;
+                import { ajax } from 'rxjs/ajax';
+                import { map, catchError } from 'rxjs/operators';
+                import { of } from 'rxjs';
+
+                const obs$ = ajax(`https://api.github.com/users?per_page=5`).pipe(
+                map(userResponse => console.log('users: ', userResponse)),
+                catchError(error => {
+                console.log('error: ', error);
+                return of(error);
+                })
+                );
+
+                - from: Cria um Observable a partir de um Array, um objeto semelhante a um array, uma Promise, um objeto
+                iterável ou um objeto semelhante a um Observable.;
+                import { from } from 'rxjs';
+
+                const array = [10, 20, 30];
+                const result = from(array);
+
+                result.subscribe(x => console.log(x));
+
+                // Logs:
+                // 10
+                // 20
+                // 30
+
+                - fromEvent: Cria um Observable que emite eventos de um tipo específico vindo de um determinado destino
+                de evento.;
+                import { fromEvent } from 'rxjs';
+
+                const clicks = fromEvent(document, 'click');
+                clicks.subscribe(x => console.log(x));
+
+                // Results in:
+                // MouseEvent object logged to console every time a click
+                // occurs on the document.
+
+                - generate: Gera uma sequência observável executando um loop orientado por estado que produz os
+                elementos da sequência, usando o escalonador especificado para enviar mensagens do observador.;
+                import { generate } from 'rxjs';
+
+                const result = generate(1, x => x < 5, x=> x * 2, x => x + 1, asap);
+
+                    result.subscribe(x => console.log(x));
+
+                    // Logs:
+                    // 2
+                    // 3
+                    // 5
+
+
+                    - of: Converte os argumentos em uma sequência observável.;
+                    import { of } from 'rxjs';
+
+                    of([1, 2, 3])
+                    .subscribe(
+                    next => console.log('next:', next),
+                    err => console.log('error:', err),
+                    () => console.log('the end'),
+                    );
+
+                    // Outputs
+                    // next: [1, 2, 3]
+                    // the end
+
+                    - interval: Cria um Observable que emite números sequenciais a cada intervalo de tempo especificado,
+                    em um SchedulerLike especificado.;
+                    import { interval } from 'rxjs';
+                    import { take } from 'rxjs/operators';
+
+                    const numbers = interval(1000);
+
+                    const takeFourNumbers = numbers.pipe(take(4));
+
+                    takeFourNumbers.subscribe(x => console.log('Next: ', x));
+
+                    // Logs:
+                    // Next: 0
+                    // Next: 1
+                    // Next: 2
+                    // Next: 3
+
+                    - throwError: Esta função de criação é útil para criar um observável que criará um erro e um erro
+                    toda vez que for inscrito. Geralmente, dentro da maioria dos operadores, quando você deseja retornar
+                    um observável com erro, isso é desnecessário. Na maioria dos casos, como no retorno interno de
+                    concatMap, mergeMap, defer e muitos outros, você pode simplesmente lançar o erro e o RxJS pegará
+                    isso e notificará o consumidor sobre o erro.;
+                    import { throwError } from 'rxjs';
+
+                    let errorCount = 0;
+
+                    const errorWithTimestamp$ = throwError(() => {
+                    const error: any = new Error(`This is error number ${++errorCount}`);
+                    error.timestamp = Date.now();
+                    return error;
+                    });
+
+                    errorWithTimesptamp$.subscribe({
+                    error: err => console.log(err.timestamp, err.message)
+                    });
+
+                    errorWithTimesptamp$.subscribe({
+                    error: err => console.log(err.timestamp, err.message)
+                    });
+
+                    // Logs the timestamp and a new error message each subscription;
+
+                    - timer: Esse observável é útil para criar atrasos no código ou competir com outros valores para
+                    tempos limites ad-hoc.
+
+                    O atraso é especificado por padrão em milissegundos; no entanto, fornecer um planejador
+                    personalizado pode criar um comportamento diferente.;
+                    import { timer, of } from 'rxjs';
+                    import { concatMapTo } from 'rxjs/operators';
+
+                    // This could be any observable
+                    const source = of(1, 2, 3);
+
+                    const result = timer(3000).pipe(
+                    concatMapTo(source)
+                    )
+                    .subscribe(console.log);
+            </li>
+            <li>
+                X. Estes são operadores de criação observáveis que também possuem funcionalidade de junção - emitindo
+                valores de fontes observáveis múltiplas.
+                <br> combineLatest, concat, forkJoin, merge, partition, race, zip
+            </li>
+            <li>
+                XI.
+                - concat: Cria uma saída Observable que emite sequencialmente todos os valores do primeiro Observable
+                fornecido e, em seguida, passa para o próximo.;
+                import { concat, interval, range } from 'rxjs';
+                import { take } from 'rxjs/operators';
+
+                const timer = interval(1000).pipe(take(4));
+                const sequence = range(1, 10);
+                const result = concat(timer, sequence);
+                result.subscribe(x => console.log(x));
+
+                // results in:
+                // 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3 -immediate-> 1 ... 10
+
+                - forkJoin: Aceita um Array de ObservableInput ou um Objeto de dicionário de ObservableInput e retorna
+                um Observable que emite um array de valores na mesma ordem que o array passado ou um dicionário de
+                valores na mesma forma do dicionário passado.;
+                import { forkJoin, of, timer } from 'rxjs';
+
+                const observable = forkJoin({
+                foo: of(1, 2, 3, 4),
+                bar: Promise.resolve(8),
+                baz: timer(4000),
+                });
+                observable.subscribe({
+                next: value => console.log(value),
+                complete: () => console.log('This is how it ends!'),
+                });
+
+                // Logs:
+                // { foo: 4, bar: 8, baz: 0 } after 4 seconds
+                // "This is how it ends!" immediately after
+
+                - merge: Cria uma saída Observable que emite simultaneamente todos os valores de cada entrada Observable
+                fornecida.;
+                import { merge, fromEvent, interval } from 'rxjs';
+
+                const clicks = fromEvent(document, 'click');
+                const timer = interval(1000);
+                const clicksOrTimer = merge(clicks, timer);
+                clicksOrTimer.subscribe(x => console.log(x));
+
+                // Results in the following:
+                // timer will emit ascending values, one every second(1000ms) to console
+                // clicks logs MouseEvents to console everytime the "document" is clicked
+                // Since the two streams are merged you see these happening
+                // as they occur.
+            </li>
+            <li>
+                XII. (não existe essa pergunta... hehehe)
+            </li>
+            <li>
+                XIII. buffer, bufferCount, bufferTime, bufferToggle, bufferWhen, concatMap, concatMapTo, exhaust,
+                exhaustMap, expand, groupBy, map, mapTo, mergeMap, mergeMapTo, mergeScan, pairwise, partition, pluck,
+                scan, switchScan, switchMap, switchMapTo, window, windowCount, windowTime, windowToggle, windowWhen
+            </li>
+            <li>
+                XIV.- concatMap: Projeta cada valor de origem para um Observable que é mesclado na saída Observable, de
+                maneira serializada, esperando que cada um seja concluído antes de mesclar o próximo.;
+                import { fromEvent, interval } from 'rxjs';
+                import { concatMap, take } from 'rxjs/operators';
+
+                const clicks = fromEvent(document, 'click');
+                const result = clicks.pipe(
+                concatMap(ev => interval(1000).pipe(take(4)))
+                );
+                result.subscribe(x => console.log(x));
+
+                // Results in the following:
+                // (results are not concurrent)
+                // For every click on the "document" it will emit values 0 to 3 spaced
+                // on a 1000ms interval
+                // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
+
+                - map: Aplica uma determinada função de projeto a cada valor emitido pela fonte Observable e emite os
+                valores resultantes como um Observable.;
+                import { fromEvent } from 'rxjs';
+                import { map } from 'rxjs/operators';
+
+                const clicks = fromEvent(document, 'click');
+                const positions = clicks.pipe(map(ev => ev.clientX));
+                positions.subscribe(x => console.log(x));
+
+                - mapTo: Emite o valor constante fornecido na saída Observable sempre que a fonte Observable emite um
+                valor.;
+                import { fromEvent } from 'rxjs';
+                import { mapTo } from 'rxjs/operators';
+
+                const clicks = fromEvent(document, 'click');
+                const greetings = clicks.pipe(mapTo('Hi'));
+                greetings.subscribe(x => console.log(x));
+
+                - mergeMap: Projeta cada valor de origem para um Observável que é mesclado na saída Observável.;
+                import { of, interval } from 'rxjs';
+                import { mergeMap, map } from 'rxjs/operators';
+
+                const letters = of('a', 'b', 'c');
+                const result = letters.pipe(
+                mergeMap(x => interval(1000).pipe(map(i => x+i))),
+                );
+                result.subscribe(x => console.log(x));
+
+                // Results in the following:
+                // a0
+                // b0
+                // c0
+                // a1
+                // b1
+                // c1
+                // continues to list a,b,c with respective ascending integers
+
+                - mergeMapTo: Projeta cada valor de origem para o mesmo Observable, que é mesclado várias vezes na saída
+                Observable.
+                É como mergeMap, mas mapeia cada valor sempre para o mesmo Observable interno.;
+                import { fromEvent, interval } from 'rxjs';
+                import { mergeMapTo } from 'rxjs/operators';
+
+                const clicks = fromEvent(document, 'click');
+                const result = clicks.pipe(mergeMapTo(interval(1000)));
+                result.subscribe(x => console.log(x));
+
+                - switchMap: Projeta cada valor de origem para um Observável que é mesclado na saída Observável,
+                emitindo valores apenas do Observável projetado mais recentemente.;
+                import { of } from 'rxjs';
+                import { switchMap } from 'rxjs/operators';
+
+                const switched = of(1, 2, 3).pipe(switchMap((x: number) => of(x, x ** 2, x ** 3)));
+                switched.subscribe(x => console.log(x));
+                // outputs
+                // 1
+                // 1
+                // 1
+                // 2
+                // 4
+                // 8
+                // ... and so on
+
+                - switchMapTo: Projeta cada valor de origem para o mesmo Observable, que é achatado várias vezes com
+                switchMap na saída Observable.;
+                import { fromEvent, interval } from 'rxjs';
+                import { switchMapTo } from 'rxjs/operators';
+
+                const clicks = fromEvent(document, 'click');
+                const result = clicks.pipe(switchMapTo(interval(1000)));
+                result.subscribe(x => console.log(x));
+            </li>
+        </ul>
+    </p>
+</body>
