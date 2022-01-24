@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { InicialComponent } from './inicial/inicial.component';
@@ -16,6 +17,7 @@ import { ApprovedComponent } from './approved/approved.component';
     DeniedComponent,
     ApprovedComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule],
+  imports: [CommonModule, MatButtonModule, PagesRoutingModule],
+  exports: [MatButtonModule],
 })
 export class PagesModule {}
