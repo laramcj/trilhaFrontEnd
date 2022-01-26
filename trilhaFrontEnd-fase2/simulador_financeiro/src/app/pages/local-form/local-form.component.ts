@@ -26,24 +26,24 @@ export class LocalFormComponent implements OnInit {
 
   private criarFormulario() {
     this.local = this.fb.group({
-      id: new FormControl(null),
-      type: new FormControl(null, [
+      id: new FormControl(''),
+      type: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
       ]),
-      income: new FormControl(null, [
+      income: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
       ]),
-      value: new FormControl(null, [
+      value: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
       ]),
-      entry: new FormControl(null, [
+      entry: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
       ]),
-      installments: new FormControl(null, [
+      installments: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
       ]),

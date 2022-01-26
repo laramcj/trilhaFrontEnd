@@ -27,26 +27,26 @@ export class ClientFormComponent implements OnInit {
 
   private criarFormulario() {
     this.client = this.formbuilder.group({
-      id: new FormControl(null),
-      name: new FormControl(null, [
+      id: new FormControl(''),
+      name: new FormControl('', [
         Validators.required,
         Validators.pattern(this.letters),
         Validators.minLength(3),
       ]),
-      job: new FormControl(null, [Validators.required]),
-      cpf: new FormControl(null, [
+      job: new FormControl('', [Validators.required]),
+      cpf: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
         Validators.minLength(11),
       ]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      datebirth: new FormControl(null, [Validators.required]),
-      zipcode: new FormControl(null, [
+      email: new FormControl('', [Validators.required, Validators.email]),
+      dateBirth: new FormControl('', [Validators.required]),
+      zipCode: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
         Validators.minLength(8),
       ]),
-      celphone: new FormControl(null, [
+      celPhone: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),
         Validators.minLength(11),

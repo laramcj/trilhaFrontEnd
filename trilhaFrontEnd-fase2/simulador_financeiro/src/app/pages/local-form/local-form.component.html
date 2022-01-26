@@ -1,15 +1,15 @@
 <div class="body">
   <p>Dados do imóvel</p>
   <div class="container">
-    <form>
+    <form [formGroup]="local">
       <div class="form-container">
-        <mat-form-field formControlName="type" appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Tipo do imóvel</mat-label>
-          <mat-select>
+          <mat-select formControlName="type">
             <mat-option value="Residencial">Residencial</mat-option>
             <mat-option value="Comercial">Comercial</mat-option>
           </mat-select>
-          <mat-hint> Preencha com o tipo do imóvel </mat-hint>
+          <mat-error> Preencha com o tipo do imóvel </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -22,7 +22,7 @@
             formControlName="income"
           />
 
-          <mat-hint> Preencha com a sua renda mensal </mat-hint>
+          <mat-error> Preencha com a sua renda mensal </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -35,7 +35,7 @@
             formControlName="value"
           />
 
-          <mat-hint> Preencha com o valor do imóvel desejado </mat-hint>
+          <mat-error> Preencha com o valor do imóvel desejado </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
