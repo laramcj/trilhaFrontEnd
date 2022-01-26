@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { MatDividerModule } from '@angular/material/divider';
+import { MatOptionModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { InicialComponent } from './inicial/inicial.component';
@@ -19,7 +24,25 @@ import { ApprovedComponent } from './approved/approved.component';
     DeniedComponent,
     ApprovedComponent,
   ],
-  imports: [CommonModule, MatButtonModule, MatInputModule, PagesRoutingModule, ReactiveFormsModule],
-  exports: [MatButtonModule, MatInputModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatInputModule,
+    PagesRoutingModule,
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

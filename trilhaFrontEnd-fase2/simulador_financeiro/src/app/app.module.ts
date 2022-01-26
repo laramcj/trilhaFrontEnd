@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import * as divider from '@angular/material/divider';
 
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
@@ -21,6 +22,7 @@ import { PagesModule } from './pages/pages.module';
     PagesModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    divider.MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

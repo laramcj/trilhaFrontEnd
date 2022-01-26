@@ -2,7 +2,7 @@
   width: auto;
   padding: 16px;
   background-color: #e5e5e5;
-  height: 89vh;
+  height: 100%;
 }
 
 p {
@@ -15,7 +15,7 @@ p {
   background-color: #ffffff;
   border-radius: 4px;
   width: 95%;
-  height: 745px;
+  height: 87vh;
   display: flex;
   flex-direction: column;
 }
@@ -26,15 +26,7 @@ h1 {
   font-size: 3em;
 }
 
-hr {
-  height: 1px;
-  width: 95%;
-  background: rgba(33, 33, 33, 0.08);
-  mix-blend-mode: normal;
-  transform: matrix(1, 0, 0, -1, 0, 0);
-}
-
-img{
+img {
   align-self: center;
 }
 
@@ -42,11 +34,15 @@ h2 {
   color: #a5d76e;
   text-align: center;
 }
-.container li {
+
+ul {
   align-self: center;
+}
+
+.container li {
   font-size: 1.5em;
   font-weight: 500;
-
+  margin-top: 17px;
 }
 
 button {

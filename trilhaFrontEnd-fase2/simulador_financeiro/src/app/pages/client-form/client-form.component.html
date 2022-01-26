@@ -11,7 +11,6 @@
             #input
             placeholder="Name"
             formControlName="Nome Completo"
-            required
           />
 
           <mat-hint> Preencha com seu nome completo </mat-hint>
@@ -25,7 +24,6 @@
             #input
             placeholder="job"
             formControlName="Profissão"
-            required
           />
 
           <mat-hint> Preencha com a sua profissão </mat-hint>
@@ -34,13 +32,7 @@
         <mat-form-field appearance="outline">
           <mat-label>CPF</mat-label>
 
-          <input
-            matInput
-            #input
-            placeholder="cpf"
-            formControlName="CPF"
-            required
-          />
+          <input matInput #input placeholder="cpf" formControlName="CPF" />
 
           <mat-hint> Preencha com o seu CPF </mat-hint>
         </mat-form-field>
@@ -52,7 +44,6 @@
             matInput
             placeholder="example@example.com"
             formControlName="email"
-            required
           />
 
           <mat-error> Preencha com um email válido </mat-error>
@@ -65,7 +56,6 @@
             matInput
             placeholder="Data de nascimento"
             formControlName="datebirth"
-            required
           />
 
           <mat-error> Preencha com sua data de nascimento </mat-error>
@@ -74,12 +64,7 @@
         <mat-form-field appearance="outline">
           <mat-label>CEP</mat-label>
 
-          <input
-            matInput
-            placeholder="CEP"
-            formControlName="zipcode"
-            required
-          />
+          <input matInput placeholder="CEP" formControlName="zipcode" />
 
           <mat-error> O CEP deve ter 9 dígitos </mat-error>
         </mat-form-field>
@@ -87,30 +72,34 @@
         <mat-form-field appearance="outline">
           <mat-label>Celular</mat-label>
 
-          <input
-            matInput
-            placeholder="Celular"
-            formControlName="celphone"
-            required
-          />
+          <input matInput placeholder="Celular" formControlName="celphone" />
 
           <mat-error> Preencha com seu celular </mat-error>
         </mat-form-field>
       </div>
     </form>
 
-    <button mat-stroked-button class="btn" color="primary" routerLink="">
-      CANCELAR
-    </button>
+    <mat-divider></mat-divider>
 
-    <button
-      mat-flat-button
-      color="primary"
-      class="btn"
-      routerLink="/local-form"
-      [disabled]="client.invalid"
-    >
-      CONTINUAR
-    </button>
+    <div class="footer">
+      <button
+        mat-stroked-button
+        class="btn-cancelar"
+        color="primary"
+        routerLink=""
+      >
+        CANCELAR
+      </button>
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="btn"
+        routerLink="/local-form"
+        [disabled]="client.invalid"
+      >
+        CONTINUAR
+      </button>
+    </div>
   </div>
 </div>

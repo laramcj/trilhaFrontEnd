@@ -3,17 +3,12 @@
   <div class="container">
     <form>
       <div class="form-container">
-        <mat-form-field appearance="outline">
+        <mat-form-field formControlName="type" appearance="fill">
           <mat-label>Tipo do imóvel</mat-label>
-
-          <input
-            matInput
-            #input
-            placeholder="Tipo do imóvel"
-            formControlName="type"
-            required
-          />
-
+          <mat-select>
+            <mat-option value="Residencial">Residencial</mat-option>
+            <mat-option value="Comercial">Comercial</mat-option>
+          </mat-select>
           <mat-hint> Preencha com o tipo do imóvel </mat-hint>
         </mat-form-field>
 
@@ -25,7 +20,6 @@
             #input
             placeholder="Renda mensal"
             formControlName="income"
-            required
           />
 
           <mat-hint> Preencha com a sua renda mensal </mat-hint>
@@ -39,7 +33,6 @@
             #input
             placeholder="Valor do imóvel"
             formControlName="value"
-            required
           />
 
           <mat-hint> Preencha com o valor do imóvel desejado </mat-hint>
@@ -52,7 +45,6 @@
             matInput
             placeholder="Valor da entrada"
             formControlName="entry"
-            required
           />
 
           <mat-error> Preencha com no mínimo 20% do valor do imóvel </mat-error>
@@ -65,7 +57,6 @@
             matInput
             placeholder="Em quantas parcelas deseja parcelar?"
             formControlName="installments"
-            required
           />
 
           <mat-error> Preencha com no máximo 360 parcelas </mat-error>
@@ -73,18 +64,29 @@
       </div>
     </form>
 
-    <button mat-stroked-button color="primary">CANCELAR</button>
+    <mat-divider></mat-divider>
 
-    <button
-      mat-flat-button
-      color="primary"
-      class="btn"
-      routerLink="/approved"
-      [disabled]="local.invalid"
-      type="submit"
-      class="main__btn"
-    >
-      CONTINUAR
-    </button>
+    <div class="footer">
+      <button
+        mat-stroked-button
+        color="primary"
+        class="btn-cancelar"
+        routerLink="/client-form"
+      >
+        CANCELAR
+      </button>
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="btn"
+        routerLink="/approved"
+        [disabled]="local.invalid"
+        type="submit"
+        class="main__btn"
+      >
+        CONTINUAR
+      </button>
+    </div>
   </div>
 </div>
