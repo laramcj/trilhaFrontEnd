@@ -1,1 +1,90 @@
-<p>local-form works!</p>
+<div class="body">
+  <p>Dados do imóvel</p>
+  <div class="container">
+    <form>
+      <div class="form-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo do imóvel</mat-label>
+
+          <input
+            matInput
+            #input
+            placeholder="Tipo do imóvel"
+            formControlName="type"
+            required
+          />
+
+          <mat-hint> Preencha com o tipo do imóvel </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Renda mensal</mat-label>
+
+          <input
+            matInput
+            #input
+            placeholder="Renda mensal"
+            formControlName="income"
+            required
+          />
+
+          <mat-hint> Preencha com a sua renda mensal </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Valor do imóvel</mat-label>
+
+          <input
+            matInput
+            #input
+            placeholder="Valor do imóvel"
+            formControlName="value"
+            required
+          />
+
+          <mat-hint> Preencha com o valor do imóvel desejado </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Valor da entrada</mat-label>
+
+          <input
+            matInput
+            placeholder="Valor da entrada"
+            formControlName="entry"
+            required
+          />
+
+          <mat-error> Preencha com no mínimo 20% do valor do imóvel </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Em quantas parcelas deseja parcelar?</mat-label>
+
+          <input
+            matInput
+            placeholder="Em quantas parcelas deseja parcelar?"
+            formControlName="installments"
+            required
+          />
+
+          <mat-error> Preencha com no máximo 360 parcelas </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+
+    <button mat-stroked-button color="primary">CANCELAR</button>
+
+    <button
+      mat-flat-button
+      color="primary"
+      class="btn"
+      routerLink="/approved"
+      [disabled]="local.invalid"
+      type="submit"
+      class="main__btn"
+    >
+      CONTINUAR
+    </button>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { InicialComponent } from './inicial/inicial.component';
@@ -17,7 +19,7 @@ import { ApprovedComponent } from './approved/approved.component';
     DeniedComponent,
     ApprovedComponent,
   ],
-  imports: [CommonModule, MatButtonModule, PagesRoutingModule],
-  exports: [MatButtonModule],
+  imports: [CommonModule, MatButtonModule, MatInputModule, PagesRoutingModule, ReactiveFormsModule],
+  exports: [MatButtonModule, MatInputModule],
 })
-export class PagesModule {}
+export class PagesModule { }
