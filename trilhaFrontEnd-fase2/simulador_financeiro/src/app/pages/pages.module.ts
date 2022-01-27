@@ -15,6 +15,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import { LocalFormComponent } from './local-form/local-form.component';
 import { DeniedComponent } from './denied/denied.component';
 import { ApprovedComponent } from './approved/approved.component';
+import { ExemploComponent } from './exemplo/exemplo.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ApprovedComponent } from './approved/approved.component';
     LocalFormComponent,
     DeniedComponent,
     ApprovedComponent,
+    ExemploComponent,
   ],
   imports: [
     CommonModule,
