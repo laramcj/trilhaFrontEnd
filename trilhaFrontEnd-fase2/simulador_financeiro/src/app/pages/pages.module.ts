@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatOptionModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { InicialComponent } from './inicial/inicial.component';
@@ -15,7 +16,6 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import { LocalFormComponent } from './local-form/local-form.component';
 import { DeniedComponent } from './denied/denied.component';
 import { ApprovedComponent } from './approved/approved.component';
-import { ExemploComponent } from './exemplo/exemplo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { ExemploComponent } from './exemplo/exemplo.component';
     LocalFormComponent,
     DeniedComponent,
     ApprovedComponent,
-    ExemploComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +34,8 @@ import { ExemploComponent } from './exemplo/exemplo.component';
     MatDividerModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxMaskModule.forChild(),
   ],
   exports: [
     MatButtonModule,
@@ -44,7 +44,7 @@ import { ExemploComponent } from './exemplo/exemplo.component';
     MatDividerModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
   ],
 })
 export class PagesModule {}

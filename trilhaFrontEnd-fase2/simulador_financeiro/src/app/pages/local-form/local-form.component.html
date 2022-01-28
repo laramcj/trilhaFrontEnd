@@ -15,12 +15,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Renda mensal</mat-label>
 
-          <input
-            matInput
-            #input
-            placeholder="Renda mensal"
-            formControlName="income"
-          />
+          <input matInput #input placeholder="Renda mensal" formControlName="income" mask="separator.2"
+            thousandSeparator="." />
 
           <mat-error> Preencha com a sua renda mensal </mat-error>
         </mat-form-field>
@@ -28,12 +24,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Valor do imóvel</mat-label>
 
-          <input
-            matInput
-            #input
-            placeholder="Valor do imóvel"
-            formControlName="value"
-          />
+          <input matInput #input placeholder="Valor do imóvel" formControlName="value" mask="separator.2"
+            thousandSeparator="." />
 
           <mat-error> Preencha com o valor do imóvel desejado </mat-error>
         </mat-form-field>
@@ -41,11 +33,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Valor da entrada</mat-label>
 
-          <input
-            matInput
-            placeholder="Valor da entrada"
-            formControlName="entry"
-          />
+          <input matInput placeholder="Valor da entrada" formControlName="entry" mask="separator.2"
+            thousandSeparator="." />
 
           <mat-error> Preencha com no mínimo 20% do valor do imóvel </mat-error>
         </mat-form-field>
@@ -53,11 +42,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Em quantas parcelas deseja parcelar?</mat-label>
 
-          <input
-            matInput
-            placeholder="Em quantas parcelas deseja parcelar?"
-            formControlName="installments"
-          />
+          <input matInput placeholder="Em quantas parcelas deseja parcelar?" formControlName="installments"
+            mask="000" />
 
           <mat-error> Preencha com no máximo 360 parcelas </mat-error>
         </mat-form-field>
@@ -67,24 +53,12 @@
     <mat-divider></mat-divider>
 
     <div class="footer">
-      <button
-        mat-stroked-button
-        color="primary"
-        class="btn-cancelar"
-        routerLink="/client-form"
-      >
+      <button mat-stroked-button color="primary" class="btn-cancelar" routerLink="/client-form">
         CANCELAR
       </button>
 
-      <button
-        mat-flat-button
-        color="primary"
-        class="btn"
-        routerLink="/approved"
-        [disabled]="local.invalid"
-        type="submit"
-        class="main__btn"
-      >
+      <button mat-flat-button color="primary" class="btn" routerLink="/approved" [disabled]="local.invalid"
+        type="submit" class="main__btn">
         CONTINUAR
       </button>
     </div>

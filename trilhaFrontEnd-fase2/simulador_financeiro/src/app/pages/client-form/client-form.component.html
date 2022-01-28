@@ -5,12 +5,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Nome completo</mat-label>
 
-        <input
-          matInput
-          #input
-          placeholder="Nome Completo"
-          formControlName="name"
-        />
+        <input matInput #input placeholder="Nome Completo" formControlName="name" />
 
         <mat-error> Preencha com seu nome completo </mat-error>
       </mat-form-field>
@@ -26,7 +21,7 @@
       <mat-form-field appearance="outline">
         <mat-label>CPF</mat-label>
 
-        <input matInput #input placeholder="CPF" formControlName="cpf" />
+        <input matInput #input placeholder="CPF" formControlName="cpf" mask="000.000.000-00" />
 
         <mat-error> Preencha com o seu CPF </mat-error>
       </mat-form-field>
@@ -34,11 +29,7 @@
       <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
 
-        <input
-          matInput
-          placeholder="example@example.com"
-          formControlName="email"
-        />
+        <input matInput placeholder="example@example.com" formControlName="email" />
 
         <mat-error> Preencha com um email válido </mat-error>
       </mat-form-field>
@@ -46,11 +37,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Data de nascimento</mat-label>
 
-        <input
-          matInput
-          placeholder="Data de nascimento"
-          formControlName="dateBirth"
-        />
+        <input matInput placeholder="Data de nascimento" formControlName="dateBirth" mask="00/00/0000" />
 
         <mat-error> Preencha com sua data de nascimento </mat-error>
       </mat-form-field>
@@ -58,7 +45,7 @@
       <mat-form-field appearance="outline">
         <mat-label>CEP</mat-label>
 
-        <input matInput placeholder="CEP" formControlName="zipCode" />
+        <input matInput placeholder="CEP" formControlName="zipCode" mask="00000-000" />
 
         <mat-error> O CEP deve ter 9 dígitos </mat-error>
       </mat-form-field>
@@ -66,7 +53,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Celular</mat-label>
 
-        <input matInput placeholder="Celular" formControlName="celPhone" />
+        <input matInput placeholder="Celular" formControlName="celPhone" mask="(00) 00000-0000" />
 
         <mat-error> Preencha com seu celular </mat-error>
       </mat-form-field>
@@ -75,22 +62,11 @@
     <mat-divider></mat-divider>
 
     <div class="footer">
-      <button
-        mat-stroked-button
-        class="btn-cancelar"
-        color="primary"
-        routerLink=""
-      >
+      <button mat-stroked-button class="btn-cancelar" color="primary" routerLink="">
         CANCELAR
       </button>
 
-      <button
-        mat-flat-button
-        color="primary"
-        class="btn"
-        routerLink="/local-form"
-        [disabled]="client.invalid"
-      >
+      <button mat-flat-button color="primary" class="btn" routerLink="/local-form" [disabled]="client.invalid">
         CONTINUAR
       </button>
     </div>
