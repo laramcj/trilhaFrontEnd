@@ -5,8 +5,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ClientStorageService } from './client-storage.service';
 
 import { Client } from './client.model';
+import { Validacoes } from './validator';
 
 @Component({
   selector: 'app-client-form',
@@ -15,18 +18,40 @@ import { Client } from './client.model';
 })
 export class ClientFormComponent implements OnInit {
   private useNumber = '[0-9]*';
-  private letters = '[a-zA-Z]*';
+  private letters = '[A-zÀ-ú ]+';
 
-  client!: FormGroup;
+  clientForm!: FormGroup;
 
-  constructor(private formbuilder: FormBuilder) {}
+  constructor(
+    private formbuilder: FormBuilder,
+    private clientStorage: ClientStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.criarFormulario();
   }
 
+  client() {}
+
+  navigateImovel() {
+    const client: Client = new Client(
+      this.clientForm.get('id')?.value,
+      this.clientForm.get('name')?.value,
+      this.clientForm.get('job')?.value,
+      this.clientForm.get('cpf')?.value,
+      this.clientForm.get('email')?.value,
+      this.clientForm.get('dateBirth')?.value,
+      this.clientForm.get('zipCode')?.value,
+      this.clientForm.get('celPhone')?.value
+    );
+    this.clientStorage.setClient(client);
+
+    this.router.navigate(['local-form']);
+  }
+
   private criarFormulario() {
-    this.client = this.formbuilder.group({
+    this.clientForm = this.formbuilder.group({
       id: new FormControl(''),
       name: new FormControl('', [
         Validators.required,
@@ -40,7 +65,10 @@ export class ClientFormComponent implements OnInit {
         Validators.minLength(11),
       ]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      dateBirth: new FormControl('', [Validators.required]),
+      dateBirth: new FormControl('', [
+        Validators.required,
+        Validacoes.getIdade,
+      ]),
       zipCode: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),

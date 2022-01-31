@@ -12,6 +12,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,7 @@ import { PagesModule } from './pages/pages.module';
     divider.MatDividerModule,
     NgxMaskModule.forRoot(),
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,11 +1,11 @@
 <div class="body">
   <p>Dados do proponente</p>
   <div class="container">
-    <form [formGroup]="client">
+    <form [formGroup]="clientForm" (ngSubmit)="client()">
       <mat-form-field appearance="outline">
         <mat-label>Nome completo</mat-label>
 
-        <input matInput #input placeholder="Nome Completo" formControlName="name" />
+        <input matInput #input placeholder="Nome Completo" formControlName="name" ngModel pattern="[A-zÀ-ú ]+" />
 
         <mat-error> Preencha com seu nome completo </mat-error>
       </mat-form-field>
@@ -13,7 +13,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Profissão</mat-label>
 
-        <input matInput #input placeholder="Profissão" formControlName="job" />
+        <input matInput #input placeholder="Profissão" formControlName="job"  ngModel pattern="[A-zÀ-ú ]+"/>
 
         <mat-error> Preencha com a sua profissão </mat-error>
       </mat-form-field>
@@ -37,10 +37,27 @@
       <mat-form-field appearance="outline">
         <mat-label>Data de nascimento</mat-label>
 
-        <input matInput placeholder="Data de nascimento" formControlName="dateBirth" mask="00/00/0000" />
+        <input matInput type="text" placeholder="Data de nascimento" formControlName="dateBirth" mask="d0/M0/0000" />
 
-        <mat-error> Preencha com sua data de nascimento </mat-error>
+        <mat-error *ngIf="clientForm.get('dateBirth')?.invalid"> Preencha com sua data de nascimento </mat-error>
       </mat-form-field>
+      <!-- <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="dp" placeholder="Date of Birth" [(ngModel)]="birthdate"
+          formControlName="dateBirth" mask="00/00/0000">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+       <mat-form-field appearance="outline">
+        <input matInput placeholder="Age" value="{{age}}" [(ngModel)]="age" formControlName="dateBirth" required>
+      </mat-form-field> 
+      <button mat-button (click)="CalculateAge()">Calculate Age</button> 
+
+
+      <mat-form-field appearance="outline">
+        <input type="date" formControlName="dateBirth" [(ngModel)]="age" />
+      <button type="button" (click)="ageCalculator()"> Calcular </button>
+      <p *ngIf="age">Sua idade é {{ showAge }}</p>
+    </mat-form-field>-->
 
       <mat-form-field appearance="outline">
         <mat-label>CEP</mat-label>
@@ -66,7 +83,7 @@
         CANCELAR
       </button>
 
-      <button mat-flat-button color="primary" class="btn" routerLink="/local-form" [disabled]="client.invalid">
+      <button mat-flat-button color="primary" class="btn" (click)="navigateImovel()" [disabled]="clientForm.invalid">
         CONTINUAR
       </button>
     </div>

@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ClientStorageService } from '../client-form/client-storage.service';
+import { Client } from '../client-form/client.model';
 
 import { Local } from './local.model';
 @Component({
@@ -14,23 +16,22 @@ import { Local } from './local.model';
 })
 export class LocalFormComponent implements OnInit {
   private useNumber = '[0-9]*';
-  private letters = '[a-zA-Z]*';
 
   local!: FormGroup;
+  client!:Client 
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private clientStorage : ClientStorageService) {}
 
   ngOnInit(): void {
     this.criarFormulario();
+    this.client = this.clientStorage.getClient()
+    console.log(this.client)
   }
 
   private criarFormulario() {
     this.local = this.fb.group({
       id: new FormControl(''),
-      type: new FormControl('', [
-        Validators.required,
-        Validators.pattern(this.useNumber),
-      ]),
+      type: new FormControl('', [Validators.required]),
       income: new FormControl('', [
         Validators.required,
         Validators.pattern(this.useNumber),

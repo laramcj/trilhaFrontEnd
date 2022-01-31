@@ -2,10 +2,6 @@
   width: auto;
   padding: 16px;
   background-color: #e5e5e5;
-  background-image: url("../../../assets/logoSoVamuBack.svg");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: 20%;
   height: 89vh;
 }
 
@@ -19,7 +15,7 @@ p {
   background-color: #ffffff;
   border-radius: 4px;
   width: 95%;
-  height: 272px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
