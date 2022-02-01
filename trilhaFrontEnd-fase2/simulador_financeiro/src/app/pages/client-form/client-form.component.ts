@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { ClientStorageService } from './client-storage.service';
 
 import { Client } from './client.model';
-import { Validacoes } from './validator';
+import { AgeValidator } from './age-validator';
 
 @Component({
   selector: 'app-client-form',
@@ -47,7 +47,7 @@ export class ClientFormComponent implements OnInit {
     );
     this.clientStorage.setClient(client);
 
-    this.router.navigate(['local-form']);
+    this.router.navigate(['imovel-form']);
   }
 
   private criarFormulario() {
@@ -67,7 +67,7 @@ export class ClientFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       dateBirth: new FormControl('', [
         Validators.required,
-        Validacoes.getIdade,
+        AgeValidator.getIdade,
       ]),
       zipCode: new FormControl('', [
         Validators.required,

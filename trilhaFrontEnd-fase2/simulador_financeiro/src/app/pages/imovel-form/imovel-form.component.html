@@ -1,7 +1,7 @@
 <div class="body">
   <p>Dados do imóvel</p>
   <div class="container">
-    <form [formGroup]="local">
+    <form [formGroup]="imovel">
       <div class="form-container">
         <mat-form-field appearance="fill">
           <mat-label>Tipo do imóvel</mat-label>
@@ -57,7 +57,7 @@
         VOLTAR
       </button>
 
-      <button mat-flat-button color="primary" class="btn" routerLink="/approved" [disabled]="local.invalid"
+      <button mat-flat-button color="primary" class="btn" routerLink="/approved" [disabled]="imovel.invalid"
         type="submit" class="main__btn">
         CONTINUAR
       </button>

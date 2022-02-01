@@ -14,16 +14,16 @@ import { NgxMaskModule } from 'ngx-mask';
 import { PagesRoutingModule } from './pages-routing.module';
 import { InicialComponent } from './inicial/inicial.component';
 import { ClientFormComponent } from './client-form/client-form.component';
-import { LocalFormComponent } from './local-form/local-form.component';
 import { DeniedComponent } from './denied/denied.component';
 import { ApprovedComponent } from './approved/approved.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImovelFormComponent } from './imovel-form/imovel-form.component';
 
 @NgModule({
   declarations: [
     InicialComponent,
     ClientFormComponent,
-    LocalFormComponent,
+    ImovelFormComponent,
     DeniedComponent,
     ApprovedComponent,
   ],

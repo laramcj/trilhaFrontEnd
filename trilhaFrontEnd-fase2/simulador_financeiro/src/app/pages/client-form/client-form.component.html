@@ -13,7 +13,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Profissão</mat-label>
 
-        <input matInput #input placeholder="Profissão" formControlName="job"  ngModel pattern="[A-zÀ-ú ]+"/>
+        <input matInput #input placeholder="Profissão" formControlName="job" ngModel pattern="[A-zÀ-ú ]+" />
 
         <mat-error> Preencha com a sua profissão </mat-error>
       </mat-form-field>
@@ -41,23 +41,6 @@
 
         <mat-error *ngIf="clientForm.get('dateBirth')?.invalid"> Preencha com sua data de nascimento </mat-error>
       </mat-form-field>
-      <!-- <mat-form-field appearance="outline">
-        <input matInput [matDatepicker]="dp" placeholder="Date of Birth" [(ngModel)]="birthdate"
-          formControlName="dateBirth" mask="00/00/0000">
-        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-        <mat-datepicker #dp></mat-datepicker>
-      </mat-form-field>
-       <mat-form-field appearance="outline">
-        <input matInput placeholder="Age" value="{{age}}" [(ngModel)]="age" formControlName="dateBirth" required>
-      </mat-form-field> 
-      <button mat-button (click)="CalculateAge()">Calculate Age</button> 
-
-
-      <mat-form-field appearance="outline">
-        <input type="date" formControlName="dateBirth" [(ngModel)]="age" />
-      <button type="button" (click)="ageCalculator()"> Calcular </button>
-      <p *ngIf="age">Sua idade é {{ showAge }}</p>
-    </mat-form-field>-->
 
       <mat-form-field appearance="outline">
         <mat-label>CEP</mat-label>

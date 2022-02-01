@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocalFormComponent } from './local-form.component';
+import { ImovelFormComponent } from './imovel-form.component';
 
-describe('LocalFormComponent', () => {
-  let component: LocalFormComponent;
-  let fixture: ComponentFixture<LocalFormComponent>;
+describe('ImovelFormComponent', () => {
+  let component: ImovelFormComponent;
+  let fixture: ComponentFixture<ImovelFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalFormComponent ]
+      declarations: [ ImovelFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocalFormComponent);
+    fixture = TestBed.createComponent(ImovelFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

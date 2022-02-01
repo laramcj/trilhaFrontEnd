@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 
 @Injectable()
-export class Validacoes {
+export class AgeValidator {
   static getIdade(data: AbstractControl) {
     let dia = data.parent?.get('dateBirth')?.value?.substr(0, 2);
     let mes = data.parent?.get('dateBirth')?.value?.substr(2, 2);
