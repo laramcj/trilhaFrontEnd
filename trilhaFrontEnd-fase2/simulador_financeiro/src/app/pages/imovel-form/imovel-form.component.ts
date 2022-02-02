@@ -25,7 +25,6 @@ export interface Simulacao {
 })
 export class ImovelFormComponent implements OnInit {
   imovelForm!: FormGroup;
-  client!: Client;
   totalValue!: number;
   entryValue!: number;
 
@@ -39,8 +38,6 @@ export class ImovelFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.criarFormulario();
-    this.client = this.clientStorage.getClient();
-    console.log(this.client);
   }
 
   imovel() {}
@@ -78,39 +75,44 @@ export class ImovelFormComponent implements OnInit {
     } else {
       this.router.navigate(['approved']);
     }
+
+    this.onSubmit(imovel);
   }
 
-  simulacao: Simulacao = {
-    client: {
-      name: '',
-      job: '',
-      cpf: '',
-      email: '',
-      datebirth: '',
-      zipcode: '',
-      celphone: '',
-    },
-    imovel: {
-      type: '',
-      income: 1,
-      value: 1,
-      entry: 1,
-      installments: 1,
-    },
-  };
-
-  // onSubmit() {
-  //   this.service.enviar(this.simulacao.value).subscribe({
-  //     next: (response: Simulacao) => {
-  //       this.simulacao.reset();
-  //     },
-  //     error: (error: any) => {
-  //       alert(
-  //         'Não conseguimos o envio das informações do seu formulário, pois estamos sem contato com o banco de dados. Tente novamente!'
-  //       );
-  //     },
-  //   });
-  // }
+  onSubmit(imovel: Imovel) {
+    const client: Client = this.clientStorage.getClient();
+    console.log(client);
+    const simulacao: Simulacao = {
+      client: {
+        name: client.name,
+        job: client.job,
+        cpf: client.cpf,
+        email: client.email,
+        datebirth: client.datebirth,
+        zipcode: client.zipcode,
+        celphone: client.celphone,
+      },
+      imovel: {
+        type: imovel.type,
+        income: imovel.income,
+        value: imovel.value,
+        entry: imovel.entry,
+        installments: imovel.installments,
+        approvedValue: imovel.approvedValue,
+        initialInstallment: imovel.initialInstallment,
+      },
+    };
+    this.service.enviar(simulacao).subscribe({
+      next: (response: Simulacao) => {
+        console.log(simulacao);
+      },
+      error: (error: any) => {
+        alert(
+          'Não conseguimos o envio das informações do seu formulário, pois estamos sem contato com o banco de dados. Tente novamente!'
+        );
+      },
+    });
+  }
 
   private criarFormulario() {
     this.imovelForm = this.fb.group({

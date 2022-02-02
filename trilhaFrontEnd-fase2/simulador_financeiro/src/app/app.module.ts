@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     divider.MatDividerModule,
     NgxMaskModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],

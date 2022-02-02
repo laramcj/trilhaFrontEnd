@@ -6,19 +6,19 @@ import { Observable, of } from 'rxjs';
 import { Imovel } from './imovel.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImovelService {
-  // showMessage(arg0: string) {
-  //   throw new Error('Method not implemented.');
-  // }
+  showMessage(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
-  // baseUrl = 'http://localhost:3000/financeiro';
+  baseUrl = 'http://localhost:3000/financeiro';
 
-  // constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  // enviar(simulacao: any): Observable<Simulacao> {
-  //   console.log('Serviço respondendo!', simulacao);
-  //   return this.http.post<Simulacao>(this.baseUrl, simulacao);
-  // }
+  enviar(simulacao: any): Observable<Simulacao> {
+    console.log('Serviço respondendo!', simulacao);
+    return this.http.post<Simulacao>(this.baseUrl, simulacao);
+  }
 }
