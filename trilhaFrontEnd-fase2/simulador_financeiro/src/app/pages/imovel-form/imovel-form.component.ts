@@ -54,25 +54,30 @@ export class ImovelFormComponent implements OnInit {
       this.imovelForm.get('installments')?.value
     );
 
-    
     const approvedValue = imovel.value! - imovel.entry!;
-    console.log('approvedValue ' + approvedValue);
 
     const parcela = this.imovelForm.get('installments')?.value;
-    const taxAccount = 0.08;
+    const taxAccount = 0.1;
+    const ceilIncome = 0.3;
 
     const initialInstallment =
       (approvedValue * (100 + taxAccount * (parcela / 12))) / 100 / parcela;
 
     imovel.initialInstallment = initialInstallment;
     imovel.approvedValue = approvedValue;
-    console.log('ENTRADA ' + initialInstallment);
-    console.log('VALOR APROVADO ' + approvedValue);
 
-    console.log(imovel);
     this.imovelStorage.setImovel(imovel);
 
-    this.router.navigate(['approved']);
+    const valuePlusTax =
+      imovel.approvedValue! + imovel.approvedValue! * taxAccount;
+    const maxInstallmentValue = valuePlusTax / imovel.installments!;
+    const minIncomeValue = imovel.income! * ceilIncome;
+
+    if (maxInstallmentValue > minIncomeValue) {
+      this.router.navigate(['denied']);
+    } else {
+      this.router.navigate(['approved']);
+    }
   }
 
   simulacao: Simulacao = {
