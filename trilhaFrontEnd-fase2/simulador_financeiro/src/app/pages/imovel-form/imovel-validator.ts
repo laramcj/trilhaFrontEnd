@@ -7,7 +7,7 @@ export class ImovelValidator {
     const valor = campo.parent?.get('value')?.value?.replace(',', '.');
     const entrada = campo.parent?.get('entry')?.value?.replace(',', '.');
 
-    if (entrada <= valor * 0.2) {
+    if (entrada < valor * 0.2) {
       return { entradaValida: true };
     } else {
       return null;
