@@ -45,7 +45,7 @@ export class ImovelFormComponent implements OnInit {
 
   imovel() {}
 
-  blablabla() {
+  navigateApprovedDenied() {
     const imovel: Imovel = new Imovel(
       this.imovelForm.get('type')?.value,
       this.imovelForm.get('income')?.value,
