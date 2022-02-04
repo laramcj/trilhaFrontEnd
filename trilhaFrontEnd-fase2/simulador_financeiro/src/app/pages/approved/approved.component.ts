@@ -15,17 +15,18 @@ export class ApprovedComponent implements OnInit {
   initialInstallment!: number;
   approvedValue!: number;
 
+
   constructor(
-    private clientStorage: ClientStorageService,
+    //private clientStorage: ClientStorageService,
     private imovelStorage: ImovelStorageService
   ) {}
 
   ngOnInit(): void {
-    this.client = this.clientStorage.getClient();
-    console.log(this.client);
+    //this.client = this.clientStorage.getClient();
     this.imovel = this.imovelStorage.getImovel();
     console.log(this.imovel);
     this.initialInstallment = this.imovel.initialInstallment!;
+
     this.approvedValue = this.imovel.approvedValue!;
   }
 }

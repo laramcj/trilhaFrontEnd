@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { ImovelFormComponent, Simulacao } from './imovel-form.component';
-import { Observable, of } from 'rxjs';
-import { Imovel } from './imovel.model';
+import { Simulacao } from './imovel-form.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

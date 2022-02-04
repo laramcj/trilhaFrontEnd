@@ -6,10 +6,10 @@
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 20%;
-  height: 89vh;
+  height: 85vh;
 }
 
-p {
+h2 {
   font-size: 1.5em;
   font-weight: 500;
 }
@@ -19,20 +19,21 @@ p {
   background-color: #ffffff;
   border-radius: 4px;
   width: 95%;
-  height: 272px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
 
-h1 {
+h3 {
   text-align: center;
   margin-top: 16px;
   font-size: 3em;
 }
 
-.container p {
+.conteudo {
   margin-top: 32px;
   text-align: center;
+  align-self: center;
 }
 
 button {

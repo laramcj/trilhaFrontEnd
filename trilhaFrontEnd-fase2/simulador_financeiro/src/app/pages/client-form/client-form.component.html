@@ -1,5 +1,5 @@
 <div class="body">
-  <p>Dados do proponente</p>
+  <h2 tabindex="0">Dados do proponente</h2>
   <div class="container">
     <form [formGroup]="clientForm" (ngSubmit)="client()">
       <mat-form-field appearance="outline">
@@ -7,7 +7,7 @@
 
         <input matInput #input placeholder="Nome Completo" formControlName="name" ngModel pattern="[A-zÀ-ú ]+" />
 
-        <mat-error> Preencha com seu nome completo </mat-error>
+        <mat-error *ngIf="clientForm.get('name')?.invalid"> Preencha com seu nome completo </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -15,7 +15,7 @@
 
         <input matInput #input placeholder="Profissão" formControlName="job" ngModel pattern="[A-zÀ-ú ]+" />
 
-        <mat-error> Preencha com a sua profissão </mat-error>
+        <mat-error *ngIf="clientForm.get('job')?.invalid"> Preencha com a sua profissão </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -23,7 +23,7 @@
 
         <input matInput #input placeholder="CPF" formControlName="cpf" mask="000.000.000-00" />
 
-        <mat-error> Preencha com o seu CPF </mat-error>
+        <mat-error *ngIf="clientForm.get('cpf')?.invalid"> Preencha com o seu CPF </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -31,7 +31,7 @@
 
         <input matInput placeholder="example@example.com" formControlName="email" />
 
-        <mat-error> Preencha com um email válido </mat-error>
+        <mat-error *ngIf="clientForm.get('email')?.invalid"> Preencha com um email válido </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -47,7 +47,7 @@
 
         <input matInput placeholder="CEP" formControlName="zipCode" mask="00000-000" />
 
-        <mat-error> O CEP deve ter 9 dígitos </mat-error>
+        <mat-error *ngIf="clientForm.get('zipCode')?.invalid"> O CEP deve ter 9 dígitos </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -55,7 +55,7 @@
 
         <input matInput placeholder="Celular" formControlName="celPhone" mask="(00) 00000-0000" />
 
-        <mat-error> Preencha com seu celular </mat-error>
+        <mat-error *ngIf="clientForm.get('celPhone')?.invalid"> Preencha com seu celular </mat-error>
       </mat-form-field>
     </form>
 
@@ -65,6 +65,15 @@
       <button mat-stroked-button class="btn-cancelar" color="primary" routerLink="">
         CANCELAR
       </button>
+
+      <!-- <div
+        class="fakebtn"
+        *ngIf="formCliente.invalid"
+        tabindex="0"
+        role="button"
+        aria-disabled="true"
+        aria-label="continuar"
+      ></div> -->
 
       <button mat-flat-button color="primary" class="btn" (click)="navigateImovel()" [disabled]="clientForm.invalid">
         CONTINUAR

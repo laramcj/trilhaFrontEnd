@@ -5,7 +5,7 @@
   height: 100%;
 }
 
-p {
+.aprovado {
   font-size: 1.5em;
   font-weight: 500;
 }
@@ -20,17 +20,24 @@ p {
   flex-direction: column;
 }
 
-h1 {
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+
+h3 {
   text-align: center;
   margin-top: 16px;
   font-size: 3em;
 }
 
 img {
+  margin: 16px auto;
   align-self: center;
 }
 
-h2 {
+.status {
   color: #a5d76e;
   text-align: center;
 }
