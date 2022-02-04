@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  MinLengthValidator,
   Validators,
 } from '@angular/forms';
 import { ClientStorageService } from '../client-form/client-storage.service';
@@ -102,16 +103,32 @@ export class ImovelFormComponent implements OnInit {
         initialInstallment: imovel.initialInstallment,
       },
     };
-    this.service.enviar(simulacao).subscribe({
-      next: (response: Simulacao) => {
-        console.log(simulacao);
-      },
-      error: (error: any) => {
-        alert(
-          'Não conseguimos o envio das informações do seu formulário, pois estamos sem contato com o banco de dados. Tente novamente!'
-        );
-      },
-    });
+
+    const isFormValid: boolean = this.validacaoCampos(simulacao);
+    if (isFormValid == true) {
+      this.service.enviar(simulacao).subscribe({
+        next: (response: Simulacao) => {
+          console.log(simulacao);
+        },
+        error: (error: any) => {
+          alert(
+            'Não conseguimos o envio das informações do seu formulário, pois estamos sem contato com o banco de dados. Tente novamente!'
+          );
+        },
+      });
+    } else {
+      alert('O seu formulário possui campos inválidos. Tente novamente.');
+    }
+  }
+
+  validacaoCampos(simulacao: Simulacao) {
+    //if (simulacao.client.celphone!.length < 11) return false;
+    //if (simulacao.imovel.type != 'Residencial' && 'Comercial') return false;
+    if (simulacao.imovel.income! <= 0) return false;
+    if (simulacao.imovel.value! <= 0) return false;
+    if (simulacao.imovel.entry! <= 0) return false;
+    if (simulacao.imovel.installments! > 360) return false;
+    return true;
   }
 
   private criarFormulario() {
