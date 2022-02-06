@@ -35,12 +35,14 @@ img {
   align-self: center;
 }
 
-.container p {
+.card p {
   margin-top: 17px;
   align-self: center;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
-h2 {
+.status {
   color: #ae0000;
   text-align: center;
 }
